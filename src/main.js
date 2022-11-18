@@ -10,7 +10,7 @@ const atEmojiTB = {OK: "OK.png", what: "what.png", 不高兴: "不高兴.png", �
 // 小破站表情
 const atEmojiBB = {baiyan: "baiyan.png", bishi: "bishi.png", bizui: "bizui.png", chan: "chan.png", daku: "daku.png", dalao: "dalao.png", dalian: "dalian.png", dianzan: "dianzan.png", doge: "doge.png", facai: "facai.png", fadai: "fadai.png", fanu: "fanu.png", ganga: "ganga.png", guilian: "guilian.png", guzhang: "guzhang.png", haixiu: "haixiu.png", heirenwenhao: "heirenwenhao.png", huaixiao: "huaixiao.png", jingxia: "jingxia.png", keai: "keai.png", koubi: "koubi.png", kun2: "kun2.png", lengmo: "lengmo.png", liubixue: "liubixue.png", liuhan: "liuhan.png", liulei: "liulei.png", mudengkoudai: "mudengkoudai.png", nanguo: "nanguo.png", outu: "outu.png", qinqin: "qinqin.png", se: "se.png", shengbing: "shengbing.png", shengqi: "shengqi.png", shuizhao: "shuizhao.png", sikao: "sikao.png", tiaokan: "tiaokan.png", tiaopi: "tiaopi.png", touxiao: "touxiao.png", tuxue: "tuxue.png", weiqu: "weiqu.png", wunai: "wunai.png", xiaoku: "xiaoku.png", xieyanxiao: "xieyanxiao.png", yiwen: "yiwen.png", yun: "yun.png", zaijian: "zaijian.png", zhoumei: "zhoumei.png", zhuakuang: "zhuakuang.png"};
 // 相关的字符
-const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "用户", text8: "密码", text9: "登录", text10: "取消", text11: "发布说说", text12: "添加图片，视频，音乐", text14: "(上传失败，若非网络原因，请联系Artitalk开发人员)", text15: "请先登录", text16: "内容不能为空", text17: "登陆失败，请检查用户名及密码是否正确", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text21: "请拖拽图片到此处", text22: "表情", text23: "删除", text24: "如果你看到这条说说，恭喜你已经配置成功并且可以正常使用了。当你发布一个说说之后，我将会自动消失。快去探索Artitalk吧<br>欢迎加入Artitalk的QQ交流群：1104585229<br>觉得本项目不错的话可以推荐给你的好友或者去GitHub点一个star，感谢支持", text25: "上传中", text26: "图片", text27: "音乐", text28: "视频", text29: "添加", text30: "上传的图片最大支持5M，请压缩后或换一个继续上传", text31: "上传的音乐最大支持10M，请压缩后或换一个继续上传", text32: "上传的视频最大支持30M，请压缩后或换一个继续上传", text33: "图片格式错误，请不要上传其他类型的文件", text34: "音频格式错误，请不要上传其他类型的文件", text35: "视频格式错误，请不要上传其他类型的文件", textup: "上传ing", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text40: "评论", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
+const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "请输入您的用户名", text8: "请输入您的密码", text9: "登   录", text10: "取消", text11: "发布说说", text12: "添加图片，视频，音乐", text14: "(上传失败，若非网络原因，请联系Artitalk开发人员)", text15: "请先登录", text16: "内容不能为空", text17: "登陆失败，请检查用户名及密码是否正确", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text21: "请拖拽图片到此处", text22: "表情", text23: "删除", text24: "如果你看到这条说说，恭喜你已经配置成功并且可以正常使用了。当你发布一个说说之后，我将会自动消失。快去探索Artitalk吧<br>欢迎加入Artitalk的QQ交流群：1104585229<br>觉得本项目不错的话可以推荐给你的好友或者去GitHub点一个star，感谢支持", text25: "上传中", text26: "图片", text27: "音乐", text28: "视频", text29: "添加", text30: "上传的图片最大支持5M，请压缩后或换一个继续上传", text31: "上传的音乐最大支持10M，请压缩后或换一个继续上传", text32: "上传的视频最大支持30M，请压缩后或换一个继续上传", text33: "图片格式错误，请不要上传其他类型的文件", text34: "音频格式错误，请不要上传其他类型的文件", text35: "视频格式错误，请不要上传其他类型的文件", textup: "上传ing", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text40: "评论", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
 // 系统图标
 const atOs = {
   windows: '<svg t="1591348521231" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="16474" width="10" height="10" style="display: inline"><path d="M412.224 511.904c-47.712-24.512-94.08-36.96-137.888-36.96-5.952 0-11.936 0.192-17.952 0.704-55.872 4.64-106.912 19.36-139.744 30.816-8.704 3.2-17.632 6.56-26.816 10.304l-89.824 311.392c61.696-22.816 116.288-33.952 166.272-33.952 80.832 0 139.52 30.208 188 61.312 22.976-77.92 78.048-266.08 94.496-322.336-11.936-7.296-24.064-14.56-36.512-21.312zM528.352 591.072l-90.432 314.144c26.816 15.36 117.088 64.064 186.208 64.064 55.808 0 118.24-14.304 190.848-43.808l86.368-301.984c-58.624 18.912-114.88 28.512-167.456 28.512-95.936 0-163.104-31.104-205.504-60.96zM292.832 368.8c77.12 0.8 134.144 30.208 181.408 60.512l92.768-317.344c-19.552-11.2-70.816-39.104-107.872-48.608-24.384-5.696-50.016-8.608-77.216-8.608-51.808 0.96-108.384 13.952-172.896 39.808l-88.448 310.592c64.8-24.448 120.64-36.352 172.096-36.352 0.032 0 0.128 0 0.128 0zM1024 198.112c-58.816 22.816-116.192 34.464-171.04 34.464-91.68 0-159.296-31.808-203.104-62.368l-91.936 318.24c61.76 39.712 128.288 59.872 198.112 59.872 56.96 0 115.936-13.664 175.456-40.672l-0.192-2.208 3.744-0.896 88.928-306.432z" p-id="16475" fill="' + atText.color3 + '"></path></svg> ',
@@ -25,6 +25,10 @@ var sytalk = new function() {
   let that = this;
   // 默认页
   that.pageNum = 1;
+  // 防止重复点击事件
+  that.lock = 0;
+  // 删除任务队列
+  that.deleteList = [];
   // 初始化
   this.init = function(option = {}) {
     // 写入配置文件
@@ -37,11 +41,15 @@ var sytalk = new function() {
       bgImg: option.bgImg || "",
       cssUrl: option.cssUrl || "",
       shuoPla: option.shuoPla || "",
+      avatarUrl: option.avatarUrl || "https://cravatar.cn/avatar/0?s=128",
       onLoad: option.onLoad || function(){},
+      onLogin: option.onLogin || function(){}
     };
     // 初始化leancloud方法
     try {
       AV.init({appId: that.config.appId, appKey: that.config.appKey, serverURL: that.config.serverURL});
+      // 拿到当前登陆用户
+      that.user = that.getCurrentUser();
     } catch (error) {
       let err = error.toString();
       if (err.indexOf('appId is not defined') != -1) {
@@ -104,9 +112,25 @@ var sytalk = new function() {
           // + "#artitalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel{background: var(--list-odd-color);color:#333;}"
           // + "#artitalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after{border-right-color: var(--list-odd-color);}"
           // 删除图标
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .delete_right{cursor:pointer;width:20px;height:20px;position:absolute;right: 12px;}"  
+          + "#artitalk_main #ccontent .cbp_tmtimeline>li .delete_right{cursor:pointer;width:20px;height:20px;position:absolute;right: 12px;display:none}"  
+          // 这里是弹框的样式
+          // 弹框背景
+          + "#operare_artitalk .c1{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.5)}"
+          + "#operare_artitalk .c2{postion:relative;background:#fff;position:fixed;width:400px;height:auto;top:calc(47% - 150px);left:calc(47% - 200px);z-index:3;opacity:.85;border:0;border-radius:10px;box-shadow:0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);padding:3%}"
+          + "#operare_artitalk .c2 .login_tit{font-family:UbuntuMono;font-size:1.3rem;border-bottom:1px solid #EDEDED;padding-bottom: 15px}"
+          + "#operare_artitalk .c2 .login_input{width: 80%;height:36px;line-height:36px;border-radius:24px;text-align:center;font-size:14px;border: 1px solid #EDEDED;background: #fff;}"
+          + "#operare_artitalk .c2 .login_btn, #operare_artitalk .c2 .logout_btn, #operare_artitalk .c2 .at_button{height:48px;border-radius:28px;color:#888;background:#ededed;font-size:1.3rem;cursor:pointer}"
+          + "#operare_artitalk .c2 #logw{font-size:.9rem}"
+          + "#operare_artitalk .c2 #userAvatar img{border-radius: 100%}"
+          + "#operare_artitalk .c2 #userName {font-size: 1.2rem; color: var(--main-text-color)}"
+          + "#operare_artitalk .c2 #userLogout{height: 36px;line-height: 36px;}"
+          + "#operare_artitalk .c2 #userLogout .logout_btn{width: 80%;border:0;}"
+          + '#operare_artitalk .c2 .closeBtn{position:absolute;right:15px;top:15px}'
+          + '#operare_artitalk .c2 .at_button{width: 80%;border:0;margin-top:10px}'
+
+
           // 时间机型样式
-          + "#artitalk_main p.shuoshuo_time{margin-top:10px;font-size: small;border-top: 1px dashed;;padding-top:5px;font-size:.95rem;}"
+          + "#artitalk_main p.shuoshuo_time{font-size:.95rem;margin:0;border-top: 1px dashed;line-height:2.2rem}"
           + "#artitalk_main p.shuoshuo_time svg{width: 12px;height:12px;padding-right:3px}"
           // readmore
           + "#artitalk_main #readButton #readmore{background-color: var(--readmore-bg-color);border:none;color:var(--main-text-color);font-size:medium;font-weight:500;border-radius:8px;outline:0;box-shadow:0 0 8px rgb(0 0 0 / 30%);padding:8px 16px}"
@@ -212,21 +236,22 @@ var sytalk = new function() {
                    + "</div>";
     // 操作弹出框
     let atOpHtml = "<div id='shade' class='c1' style='display: none'></div>"
-                 + "<div id='shuoshuo-modal' class='c2' style='display: none'>"
+                 + "<div id='login' class='c2' style='display: none'>"
+                 + "  <a href='javascript:void(0)' title='关闭' class='closeBtn' onclick='sytalk.close(this);'><svg t='1591347978744' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='14459' width='20' height='20' style='display: inline'><path d='M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z' p-id='14460' fill='#707070'></path><path d='M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z' p-id='14461' fill='#707070'></path></svg></a>"
                  + "  <center>"
-                 + "    <p>" + atText.text7 + "：<input type='text' class='shuoshuo_input_log' id='username'/></p>"
-                 + "    <p>" + atText.text8 + "：<input type='password' class='shuoshuo_input_log'  id='pwd'/></p>"
-                 + "    <p><input type='button' value='" + atText.text9 + "' class='at_button' id='login'>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='" + atText.text10 + "'  class='at_button' id = 'celLogin'></p>"
+                 + "    <p class=\"login_tit\">Artitalk V3.3.4</p>"
+                 + "    <p><input type='text' class='login_input lognin_input_usr' id='artitalk_usr' placeholder='" + atText.text7 + "'/></p>"
+                 + "    <p><input type='password' class='login_input lognin_input_pwd' id='artitalk_pwd' placeholder='" + atText.text8 + "'/></p>"
+                 + "    <p><input type='button' value='" + atText.text9 + "' class='login_input login_btn' id='doLogin'></p>"
                  + "  </center>"
                  + "  <center><div id='logw' style='color: red'></div></center>"
                  + "</div>"
                  + "<div id='userinfo' class='c2' style='display: none'>"
+                 + "  <a href='javascript:void(0)' title='关闭' class='closeBtn' onclick='sytalk.close(this);'><svg t='1591347978744' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='14459' width='20' height='20' style='display: inline'><path d='M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z' p-id='14460' fill='#707070'></path><path d='M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z' p-id='14461' fill='#707070'></path></svg></a>"
                  + "  <center>"
-                 + "    <p><div id='status'></div></p>"
-                 + "    <p>"
-                 + "      <input type='button' class='at_button' value='" + atText.text5 + "' id='hideuser'>&nbsp;&nbsp;&nbsp;&nbsp;"
-                 + "      <input id='tui' type='button' value='" + atText.text6 + "' class='at_button' style='display: none;' onclick='Logout();'>"
-                 + "    </p>"
+                 + "    <p id='userAvatar'>" + (that.user.img ? "<img src='" + that.user.img + "' class='circle'>" : "") + "</p>"
+                 + "    <p id='userName'>" + (that.user.username || "") + "</p>"
+                 + "    <p id='userLogout'><input id='doLogout' type='button' value='" + atText.text6 + "' class='logout_btn'></p>"
                  + "  </center>"
                  + "</div>"
                  + "<div id='shanchu' class='c2' style='display: none'>"
@@ -236,12 +261,12 @@ var sytalk = new function() {
                  + "  </center>"
                  + "</div>"
                  + "<div id='shanchur' class='c2' style='display: none'>"
+                 + "  <a href='javascript:void(0)' title='关闭' class='closeBtn' onclick='sytalk.close(this);'><svg t='1591347978744' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='14459' width='20' height='20' style='display: inline'><path d='M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z' p-id='14460' fill='#707070'></path><path d='M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z' p-id='14461' fill='#707070'></path></svg></a>"
                  + "  <center>"
                  + "    <p>" + atText.text19 + "</p>"
                  + "    <p><div id='delete1'></div></p>"
                  + "  </center>"
-                 + "</div>"
-                 + "<div id='clickForPreview'></div>";
+                 + "</div>";
     // 输出html
     var atOp = document.createElement('div');
     atOp.id = 'operare_artitalk';
@@ -251,21 +276,100 @@ var sytalk = new function() {
     // 这里第一次加载说说
     that.loadContent(that.pageNum);
     // 阅读更多按钮响应事件
-    document.getElementById('readmore').onclick = function () {
+    document.getElementById('readmore').onclick = () => {
       that.loadContent(that.pageNum);
     }
-
+    // 这里写发表评论的按钮事件 
+    document.getElementById('pubShuo').onclick = () => {
+      if (that.user.username != '') {
+        // 已登陆
+        console.log(that.user);
+      } else {
+        // 未登陆，就直接弹出登陆框
+        document.getElementById('logw').innerHTML = "<center><pre><code>" + atText.text15 + "</code></pre></center>";
+        that.Show('login');
+      }
+    }
+    // 这里是登陆 / 登出图标
+    document.getElementById('switchUser').onclick = () => {
+      if (that.user.username != '') {
+        // 如果登陆过了，就直接弹出用户面板
+        that.Show('userinfo');
+      } else {
+        // 如果没有登陆，则弹出登陆框
+        document.getElementById('logw').innerHTML = atText.text15;
+        that.Show('login');
+      }
+    }
+    // 注销登陆
+    document.getElementById('doLogout').onclick = () => {
+      AV.User.logOut().then(res => {
+        // 更新用户信息
+        that.upvUser(that.getCurrentUser());
+        // 关闭窗口
+        that.Hide('userinfo');
+      });
+    }
+    // 这里写登陆事件
+    document.getElementById('doLogin').onclick = () => {
+      if (that.lock == 1) return;
+      // 清空登陆面板的状态
+      document.getElementById('logw').innerHTML = '';
+      document.getElementById('doLogin').value = "登陆中";
+      // 用户名
+      let userName = document.getElementById('artitalk_usr').value;
+      // 密码
+      let passWord = document.getElementById('artitalk_pwd').value;
+      if (!/^.{1,}$/.test(userName) || !/^.{1,}$/.test(passWord)) {
+        document.getElementById('logw').innerHTML = atText.text43;
+        that.lock = 0; // 解锁
+        document.getElementById('doLogin').value = atText.text9; 
+        return;
+      }
+      // 开始登陆
+      AV.User.logIn(userName, passWord).then((user) => {
+        // 更新用户信息
+        that.upvUser(user.attributes)
+        // 关闭登陆窗口
+        that.Hide('login');
+        // 登陆后的回调
+        that.config.onLogin(userName);
+      }, (error) => {
+        let errLogin = error.message;
+        // console.log(errLogin);
+        if (errLogin.indexOf('mismatch') != -1) {
+          errLogin = atText.text43;
+        } else if (errLogin.indexOf('terminated') != -1) {
+          errLogin = atText.text44;
+        } else if (errLogin.indexOf('Could not find user.') != -1) {
+          errLogin = atText.text45;
+        } else if (errLogin.indexOf('You have exceeded the maximum number of login attempts.') != -1) {
+          errLogin = atText.text46;
+        }
+        document.getElementById('logw').innerHTML = errLogin;
+      }).finally(() => {
+        // 文字恢复
+        document.getElementById('doLogin').value = atText.text9; 
+        // 无论返回什么都解锁
+        that.lock = 0;
+      });
+    }
+    document.getElementById('deleteSus').onclick = () => {
+      // 然后关掉删除成功的提示
+      that.Hide('shanchu');
+      // 直接强制重新加载当前页就可以了
+      that.loadContent(that.pageNum, 1);
+    }
     return that; 
   }
   // 加载说说
-  this.loadContent = function(pageNum = 1) {
+  this.loadContent = function(pageNum = 1, refrush = 0) {
     // 显示加载动画
     that.fadeIn('lazy');
     let query = new AV.Query('shuoshuo');
     // 先获取数量，再进行循环
     query.count().then(num => {
       let pageTotal = Math.round(num / that.config.pageSize) + 1
-      console.log("总页数:", pageTotal);
       // 排序字段
       query.descending('createdAt');
       // 每页条数
@@ -274,6 +378,8 @@ var sytalk = new function() {
 		  query.skip(that.config.pageSize * (pageNum - 1));
       // 拿到列表
       query.find().then(shuoContent => {
+        // 如果是强制刷新，则提前清空掉容器
+        if (refrush == 1) document.getElementById('maina').innerHTML = '';
         // 处理列表
         shuoContent.forEach(atContent => {
           //OS icon judge
@@ -284,16 +390,14 @@ var sytalk = new function() {
           }
           // 头像初始化
 				  let shuoAvatar = atContent.attributes.avatar;
-				  shuoAvatar = typeof (shuoAvatar) === "undefined" ? "https://cravatar.cn/avatar/0?s=128" : shuoAvatar;
+				  shuoAvatar = typeof (shuoAvatar) === "undefined" ? that.config.avatarUrl : shuoAvatar;
 				  // 当前用户头像
-          let currentUser = AV.User.current();
-				  let hideIcon = currentUser ? '' : 'style="display: none"';
+				  let hideIcon = that.user.username ? 'style="display: inline"' : 'style="display: none"';
           // 时间格式化
 				  let nowDate = new Date(atContent.createdAt);
           nowDate = nowDate.getFullYear() + '-' + that.timeFormat(nowDate.getMonth() + 1) + '-' + that.timeFormat(nowDate.getDate()) + ' ' + that.timeFormat(nowDate.getHours()) + ':' + that.timeFormat(nowDate.getMinutes()) + ':' + that.timeFormat(nowDate.getSeconds());
           // 内容模板
-          let contentli = '<li><span class="shuoshuo_author_img" onclick="javascript:atEdit(\"' + atContent.id + '\");"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="artitalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><div ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right"><svg t="1591347978744" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14459" width="20" height="20" style="display: inline"  onclick="delete(\"' + atContent.id + '\")"><path d="M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z" p-id="14460" fill="' + atText.color3 + '"></path><path d="M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z" p-id="14461" fill="' + atText.color3 + '"></path></svg></div><div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span class="os">' + atOs[os] + os + '</span><span class="date">&nbsp&nbsp' + '<svg t="1591350196611" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24683" width="10" height="10" style="display: inline"><path d="M171.605333 622.933333a341.333333 341.333333 0 1 1 680.789334 0h150.186666a21.333333 21.333333 0 1 1 0 42.666667H21.418667a21.333333 21.333333 0 1 1 0-42.666667h150.229333z m637.994667 0a298.666667 298.666667 0 1 0-595.2 0h595.2z" fill="' + atText.color3 + '" p-id="24684"></path></svg>' + nowDate + '</span></p></span></li>';
-          // 把内容追加到列表
+          let contentli = '<li id="li_' + atContent.id + '"><span class="shuoshuo_author_img"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="artitalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><a href="javascript:void(0)" ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right" onclick="sytalk.delete(\'' + atContent.id + '\')"><svg t="1591347978744" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14459" width="20" height="20" style="display: inline"><path d="M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z" p-id="14460"></path><path d="M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z" p-id="14461"></path></svg></a><div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span class="os">' + atOs[os] + os + '</span><span class="date">&nbsp&nbsp' + '<svg t="1591350196611" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24683" width="10" height="10" style="display: inline"><path d="M171.605333 622.933333a341.333333 341.333333 0 1 1 680.789334 0h150.186666a21.333333 21.333333 0 1 1 0 42.666667H21.418667a21.333333 21.333333 0 1 1 0-42.666667h150.229333z m637.994667 0a298.666667 298.666667 0 1 0-595.2 0h595.2z" p-id="24684"></path></svg>' + nowDate + '</span></p></span></li>';
           document.getElementById('maina').insertAdjacentHTML('beforeend', contentli);
           that.fadeOut('lazy');
           if (that.pageNum < pageTotal) {
@@ -308,6 +412,51 @@ var sytalk = new function() {
       // 这里设置回调
       that.pageNum == 1 && that.config.onLoad();
     });
+  }
+  // 更新用户信息
+  this.upvUser = (user) => {
+    if (!user) return;
+    that.user = user;
+    // 登陆面板信息更新
+    if (that.user.username) {
+      document.getElementById("userAvatar").innerHTML = "<img src='" + that.user.img + "' class='circle' />";
+      document.getElementById("userName").innerHTML = that.user.username;
+      // 删除按钮可见性
+      document.querySelectorAll(".delete_right").forEach((node) => {
+        node.style.display = 'inline';
+      });
+    } else {
+      document.querySelectorAll(".delete_right").forEach((node) => {
+        node.style.display = 'none';
+      });
+    }
+  }
+  // 删除当前说说
+  this.delete = (id) => {
+    document.getElementById('delete1').innerHTML = '<input type="button" class="at_button" value="' + atText.text5 + '" id="Delete"/>';
+    that.Show('shanchur');
+    // 这里注册直接删除事件
+    document.getElementById('Delete').onclick = function () {
+      that.Hide('shanchur');
+      that.fadeIn('lazy');
+      AV.Object.createWithoutData('shuoshuo', id).destroy().then( (success) => {
+        that.Show('shanchu');
+      }, function (error) {
+        console.log(error.rawMessage);
+      }).finally(() => {
+        that.fadeOut('lazy');
+      });
+    }
+  }
+  // 关闭模态框
+  this.close = (obj) => {
+    let id = obj.parentElement.getAttribute('id');
+    that.Hide(id)
+  }
+  // 获取当前用户
+  this.getCurrentUser = () => {
+    let currentUser = AV.User.current();
+    return currentUser ? currentUser.attributes : {username: "", img: "", email: ""};
   }
   // 时间美化
   this.timeFormat = function(time) {
@@ -326,12 +475,12 @@ var sytalk = new function() {
     nowEle.style.display = 'none';
   }
 
-  this.Show = function() {
+  this.Show = function(id) {
     that.fadeIn('shade');
-    that.fadeIn('shuoshuo-modal');
+    that.fadeIn(id);
   }
-  this.Hide = function() {
+  this.Hide = function(id) {
     that.fadeOut('shade');
-    that.fadeOut('shuoshuo-modal');
+    that.fadeOut(id);
   }
 }
