@@ -58,7 +58,90 @@ var sytalk = new function() {
       if (that.config.cssUrl == "") {
         // 加载一下基础样式
         let atStyle = document.createElement("style");
-        let atCss = "div#artitalk_main {    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }  #artitalk_main .shuoshuo_row {  width: 100%;  margin-top: 10px;  display: flex;  }  #artitalk_main .artitalk_child {  width: 100%;  }  #artitalk_main #shuoshuo_content {  padding: 10px;  /* min-height: 500px; */  }  #artitalk_main body.theme-dark .cbp_tmtimeline::before {  background: RGBA(255, 255, 255, 0.06);  }  #artitalk_main ul.cbp_tmtimeline {  padding: 0;  }  #artitalk_main .cbp_tmtimeline {  margin: 30px 0 0 0;  padding: 0;  list-style: none;  display: inline;  position: relative;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmtime {  display: block;  /* width: 29%; */  /* padding-right: 110px; */  max-width: 70px;  position: absolute;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmtime span {  display: block;  text-align: right;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:first-child {  font-size: 0.9em;  color: #bdd0db;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child {  font-size: 1.2em;  color: #9bcd9b;  }  #artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child {  color: RGBA(255, 125, 73, 0.75);  }  #artitalk_main div.cbp_tmlabel>p {  margin-bottom: 0;  }  #artitalk_main div class.cdp_tmlabel>li .cbp_tmlabel {  margin-bottom: 0;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmlabel {  margin: 0 0 45px 65px;  z-index: 1;  background: #fff7f8;  color: #333 ;  padding: 0.8em 1.2em 0.4em 1.2em;  /* font-size: 1.2em; */  font-weight: 300;  line-height: 1.4;  position: relative;  border-radius: 5px;  transition: all 0.3s ease 0s;  box-shadow: 0 1px 2px rgba(0,0,0,0.15); display: block;  }  #artitalk_main .cbp_tmlabel:hover {  /* transform: scale(1.05); */  transform: translateY(-3px);  z-index: 1;  box-shadow: 0 15px 32px rgba(0,0,0,0.15) ;  }  #artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {    background: #fff7f8;  }  #artitalk_main .cbp_tmtimeline>li .cbp_tmlabel:after {  right: 100%;  border: solid transparent;  z-index: -1;  content: \" \";  height: 0;  width: 0;  position: absolute;  pointer-events: none;  border-right-color: #fff7f8;  border-width: 10px;  top: 4px;  }  #artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {    border-right-color: #fff7f8;  }  #artitalk_main p.shuoshuo_time {  margin-top: 10px;  border-top: 1px dashed #fff;  padding-top: 5px;  font-size: 12px;  }  @media screen and (max-width: 65.375em) {  #artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child {    font-size: 1.2em;  }  }  #artitalk_main .shuoshuo_author_img img {  border: 1px solid #ddd;  padding: 2px;  float: left;  border-radius: 64px;  transition: all 1s;  }  #artitalk_main .artitalk_avatar {  border-radius: 100% ;  -moz-border-radius: 100% ;  box-shadow: inset 0 -1px 0 3333sf;  -webkit-box-shadow: inset 0 -1px 0 3333sf;  -webkit-transition: 0.4s;  -webkit-transition: -webkit-transform 0.4s ease-out;  transition: transform 0.4s ease-out;  -moz-transition: -moz-transform 0.4s ease-out;  }  #artitalk_main .artitalk_avatar:hover {  -webkit-transform: rotateZ(360deg);  -moz-transform: rotateZ(360deg);  -o-transform: rotateZ(360deg);  -ms-transform: rotateZ(360deg);  transform: rotateZ(360deg);  }  #artitalk_main .shuoshuo_text {  width: 100%;  height: 130px;  padding: 8px 16px;  background-repeat: no-repeat;  background-position: right;  transition: all 0.35s ease-in-out 0s;  outline-style: none;  border: 1px solid #ccc;  border-radius: 6px;  resize: none;  background-color: transparent;  color: #999;  }  #artitalk_main .shuoshuo_inputs {  outline-style: none;  border: 1px solid #ccc;  padding: 8px 16px;  width: 40%;  font-size: 12px;  background-color: transparent;  color: #999;  }  #operare_artitalk .at_button,  #artitalk_main .at_button {    background-color: #fff7f8;  /* Green */  border: none;  margin-left: 5px;  color: #333;  padding: 8px 16px;  text-align: center;  text-decoration: none;  height: auto;  line-height: 20px;  display: inline-block;  font-size: 12px;  border-radius: 12px;  /* circle */  outline: none;  cursor: pointer;  }  #operare_artitalk .at_button:hover,  #artitalk_main .at_button:hover {      background-color: #fff7f8;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);  }  #artitalk_main #article-container ul p {  margin: 0 0 1rem;  }  #artitalk_main .power {  text-align: right;  color: #999;  margin-top: 10px;  font-size: 0.75em;  padding: 0.5em 0;  }  #artitalk_main .power a {  font-size: 0.75em;  position: relative;  cursor: pointer;  color: #1abc9c;  text-decoration: none;  display: inline-block;  }  #artitalk_main .shuoshuo_row .col.col-80 {  width: 80%;  float: left;  }  #artitalk_main .shuoshuo_row .col.col-20 {  width: 20%;  float: right;  text-align: right;  }  #artitalk_main #preview {  width: 100%;  float: left;  margin: 0.5rem 0 0;  padding: 7px;  box-shadow: 0 0 1px #f0f0f0;  }  #artitalk_main #lazy {  background: #fff;  bottom: 0;  left: 0;  position: fixed;  right: 0;  top: 0;  z-index: 9999;  }  #artitalk_main .preloader {  position: absolute;  margin-left: -55px;  margin-top: -100px;  height: 110px;  width: 110px;  left: 50%;  top: 50%;  }  #artitalk_main .preloader>svg>g>path {  stroke: #9ea1a4;  stroke-width: 0.25;  }  #artitalk_main .preloader>svg>path {  stroke: #9ea1a4;  stroke-width: 0.25;  }  #artitalk_main #cloud {  position: relative;  z-index: 2;  }  #artitalk_main #cloud path {  fill: #efefef;  }  #artitalk_main #sun {  margin-left: -10px;  margin-top: 6px;  opacity: 0;  width: 60px;  height: 60px;  position: absolute;  left: 45px;  top: 15px;  z-index: 1;  animation-name: rotate;  animation-duration: 16000ms;  animation-iteration-count: infinite;  animation-timing-function: linear;  }  #artitalk_main #sun path {  stroke-width: 0.18;  fill: #9ea1a4;  }  #artitalk_main .rain {  position: absolute;  width: 70px;  height: 70px;  margin-top: -32px;  margin-left: 19px;  }  #artitalk_main .drop {  opacity: 1;  background: #9ea1a4;  display: block;  float: left;  width: 3px;  height: 10px;  margin-left: 4px;  border-radius: 0px 0px 6px 6px;  animation-name: drop;  animation-duration: 350ms;  animation-iteration-count: infinite;  }  #artitalk_main .drop:nth-child(1) {  animation-delay: -130ms;  }  #artitalk_main .drop:nth-child(2) {  animation-delay: -240ms;  }  #artitalk_main .drop:nth-child(3) {  animation-delay: -390ms;  }  #artitalk_main .drop:nth-child(4) {  animation-delay: -525ms;  }  #artitalk_main .drop:nth-child(5) {  animation-delay: -640ms;  }  #artitalk_main .drop:nth-child(6) {  animation-delay: -790ms;  }  #artitalk_main .drop:nth-child(7) {  animation-delay: -900ms;  }  #artitalk_main .drop:nth-child(8) {  animation-delay: -1050ms;  }  #artitalk_main .drop:nth-child(9) {  animation-delay: -1130ms;  }  #artitalk_main .drop:nth-child(10) {  animation-delay: -1300ms;  }  #artitalk_main .artitalk_loading_text {  font-family: Helvetica, \"Helvetica Neue\", sans-serif;  letter-spacing: 1px;  text-align: center;  margin-left: -43px;  font-weight: bold;  margin-top: 20px;  font-size: 11px;  color: #a0a0a0;  width: 200px;  }  #artitalk_main .shuoshuoimg {  cursor: pointer;  transition: all 1s;  z-index: 2;  }  #artitalk_main .shuoshuoimg:hover {  transform: scale(3.5);  }  #artitalk_main .hide,  #operare_artitalk .hide {  display: none;  }  #operare_artitalk .c1 {  position: fixed;  top: 0;  bottom: 0;  left: 0;right: 0;  background: rgba(0,0,0,0.5);  z-index: 2;  }  #operare_artitalk .c2 {  background-color: #fff;  position: fixed;  width: 400px;  height: auto;  top: 50%;  left: 50%;  z-index: 3; margin-top: -150px;  margin-left: -200px;  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);  opacity: 0.85;  border: 0;  border-radius: 10px;  }  #operare_artitalk .shuoshuo_input_log {  outline-style: none;  margin-top: 10px;  border: 1px solid #ccc;  border-radius: 6px;  padding: 8px 16px;  font-size: 12px;  background-color: transparent;  color: #999;  }  #artitalk_main .delete_right {  cursor: pointer;  width: 12px;  height: 12px;  position: absolute;  right: 12px;  }  #artitalk_main svg {  display: inline;  }  #artitalk_main .cbp_tmlabel>p,  #artitalk_main h1,  #artitalk_main h2,  #artitalk_main h3,  #artitalk_main h4,  #artitalk_main h5,  #artitalk_main h6,  #artitalk_main em {  word-wrap: break-word;  word-break: break-all;  }  #artitalk_main .shuoshuo_emoji {  border: 1px solid #ccc;  border-radius: 6px 6px 0 0;  height: 120px;  overflow: auto;  margin-top: 10px;  border-bottom: none;  }  #artitalk_main .atemoji {  max-height: 28px;  width: 28px;  display: inline;  vertical-align: middle;  }  #artitalk_main .shuoshuo_emoji>.atemoji {  cursor: pointer;  margin: 0 0 0 10px;  display: inline;  }  #artitalk_main i>.atemoji {  cursor: pointer;  margin: 0 0 0 10px;  }  #artitalk_main .shuoshuo_emoji>a {  display: inline;  }  #artitalk_main #preview>p>.atemoji {  display: inline;  }  #artitalk_main .shuoshuo_emoji>.atemoji:hover {  transform: scale(1.5);  }  #artitalk_main div#shuoshuo_emojiswitch {  height: 40px;  width: auto;  border-radius: 0 0 6px 6px;  border-collapse: collapse;  border: 1px solid #ccc;  border-top: none;  }  #artitalk_main .shuoshuo_emoji_part {  width: 25%;  cursor: pointer;  align-content: center;  text-align: center;  line-height: 40px;  }  #artitalk_main .shuoshuo_emoji_part:hover {  background-color: #ccc;  color: #fff;  }  #artitalk_main .zuiliangdezai {  background-color: #ccc;  color: #fff;  }  #artitalk_main .pingjun {  display: flex;  }  #artitalk_main #article-container img {  margin: 0 0 0 0;  }  #artitalk_main .preview_now {  display: none;  }  #artitalk_main div#loading_txt {  font-size: 20px;  }  #artitalk_main audio {  display: block;  width: 100%;  outline: none;  opacity: 0.8;  }  #artitalk_main video {  z-index: 0;  }p.shuoshuo_time>span>a:hover {color: red;}p.shuoshuo_time>span>a {color: black;text-decoration: none;}  #artitalk_main textarea#neirong:focus {  background-position-y: 150px;  transition: all 0.35s…";
+        let atCss = "div#artitalk_main{transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)}"
+                  + "#artitalk_main .shuoshuo_row{width:100%;margin-top:10px;display:flex;}"
+                  + "#artitalk_main .artitalk_child{width:100%;}"
+                  + "#artitalk_main #shuoshuo_content{padding:10px;}"
+                  + "#artitalk_main body.theme-dark .cbp_tmtimeline::before{background:RGBA(255, 255, 255, 0.06);}"
+                  + "#artitalk_main ul.cbp_tmtimeline{padding: 0;}"
+                  + "#artitalk_main .cbp_tmtimeline{margin:30px 0 0 0;padding:0;list-style:none;display:inline;position:relative;}"  
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmtime{display:block;max-width:70px;position:absolute;}"
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span{display:block;text-align:right;}"
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:first-child{font-size:0.9em;color:#bdd0db;}"
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child{font-size:1.2em;color:#9bcd9b;}"
+                  + "#artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child{color:RGBA(255, 125, 73, 0.75);}"
+                  + "#artitalk_main div.cbp_tmlabel>p{margin-bottom: 0;}"
+                  + "#artitalk_main div class.cdp_tmlabel>li .cbp_tmlabel{margin-bottom: 0;}"
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel{margin:0 0 45px 65px;z-index:1;background:#fff7f8;color:#333;padding:.8em 1.2em .4em 1.2em;font-weight:300;line-height:1.4;position:relative;border-radius:5px;transition:all .3s ease 0s;box-shadow:0 1px 2px rgba(0,0,0,.15);display:block}"
+                  + "#artitalk_main .cbp_tmlabel:hover {transform:translateY(-3px);z-index: 1;box-shadow: 0 15px 32px rgba(0,0,0,0.15);}"
+                  + "#artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel{background: #fff7f8;}"
+                  + "#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel:after{right: 100%;border: solid transparent; z-index: -1;content: \" \";height: 0;width: 0;position: absolute;pointer-events: none;border-right-color: #fff7f8;border-width:10px;top:4px;}"
+                  + "#artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after{border-right-color: #fff7f8;}"
+                  + "#artitalk_main p.shuoshuo_time{margin-top:10px;border-top:1px dashed #fff;padding-top:5px;font-size:12px;}"
+                  + "@media screen and (max-width: 65.375em){#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child{font-size:1.2em;}}"
+                  + "#artitalk_main .shuoshuo_author_img img{border:1px solid #ddd;padding:2px;float:left;border-radius:64px;transition: all 1s;}"
+                  + "#artitalk_main .artitalk_avatar{border-radius:100%;box-shadow:inset 0 -1px 0 3333sf;transition:transform 0.4s ease-out;}"
+                  + "#artitalk_main .artitalk_avatar:hover{transform:rotateZ(360deg);}"
+                  + "#artitalk_main .shuoshuo_text{width:100%;height:130px;padding:8px 16px;background-repeat:no-repeat;background-position:right;transition:all 0.35s ease-in-out 0s;outline-style:none;border:1px solid #ccc;border-radius:6px;resize:none;background-color:transparent;color:#999;}"
+                  + "#artitalk_main .shuoshuo_inputs{outline-style: none;border: 1px solid #ccc;padding: 8px 16px;width: 40%;font-size: 12px;background-color: transparent;color: #999;}"
+                  + "#operare_artitalk .at_button,#artitalk_main .at_button{background-color: #fff7f8;border: none;margin-left: 5px;color: #333;padding: 8px 16px;text-align: center;text-decoration: none;height: auto;line-height: 20px;display: inline-block;font-size: 12px;border-radius: 12px;outline: none;cursor: pointer;}"
+                  + "#operare_artitalk .at_button:hover,#artitalk_main .at_button:hover{background-color: #fff7f8;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);}"
+                  + "#artitalk_main #article-container ul p{margin: 0 0 1rem;}"
+                  + "#artitalk_main .power{text-align: right;color: #999;margin-top: 10px;font-size: 0.75em;padding: 0.5em 0;}"
+                  + "#artitalk_main .power a{font-size: 0.75em;position: relative;cursor: pointer; color: #1abc9c;text-decoration: none;display: inline-block;}"
+                  + "#artitalk_main .shuoshuo_row .col.col-80{width: 80%; float: left;}"
+                  + "#artitalk_main .shuoshuo_row .col.col-20{width: 20%;float: right;text-align: right;}"
+                  + "#artitalk_main #preview{width: 100%;float: left;margin: 0.5rem 0 0;padding: 7px;box-shadow: 0 0 1px #f0f0f0;}"
+                  + "#artitalk_main #lazy{background: #fff;bottom: 0;left: 0;position: fixed;right: 0;top: 0;z-index: 9999;}"
+                  + "#artitalk_main .preloader{position:absolute;margin-left:-55px;margin-top:-100px;height: 110px;width: 110px;left: 50%;top: 50%;}"
+                  + "#artitalk_main .preloader>svg>g>path stroke: #9ea1a4;stroke-width: 0.25;}"
+                  + "#artitalk_main .preloader>svg>path{stroke: #9ea1a4;stroke-width: 0.25;}"
+                  + "#artitalk_main #cloud{position: relative;z-index: 2;}"
+                  + "#artitalk_main #cloud path{fill: #efefef;}"
+                  + "#artitalk_main #sun{margin-left:-10px;margin-top:6px;opacity:0;width:60px;height:60px;position:absolute;left:45px;top:15px;z-index:1;animation-name:rotate;animation-duration:16s;animation-iteration-count:infinite;animation-timing-function:linear}"
+                  + "#artitalk_main #sun path{stroke-width:0.18;fill:#9ea1a4;}"
+                  + "#artitalk_main .rain{position: absolute;width:70px;height:70px;margin-top:-32px;margin-left:19px;}"
+                  + "#artitalk_main .drop{opacity:1;background:#9ea1a4;display:block;float:left;width:3px;height:10px;margin-left:4px;border-radius:0px 0px 6px 6px;animation-name: drop;animation-duration: 350ms;animation-iteration-count: infinite;}"
+                  + "#artitalk_main .drop:nth-child(1){animation-delay:-130ms;}"
+                  + "#artitalk_main .drop:nth-child(2){animation-delay:-240ms;}"
+                  + "#artitalk_main .drop:nth-child(3){animation-delay:-390ms;}"
+                  + "#artitalk_main .drop:nth-child(4){animation-delay:-525ms;}"
+                  + "#artitalk_main .drop:nth-child(5){animation-delay:-640ms;}"
+                  + "#artitalk_main .drop:nth-child(6){animation-delay:-790ms;}"
+                  + "#artitalk_main .drop:nth-child(7){animation-delay:-900ms;}"
+                  + "#artitalk_main .drop:nth-child(8){animation-delay:-1050ms;}"
+                  + "#artitalk_main .drop:nth-child(9){animation-delay:-1130ms;}"
+                  + "#artitalk_main .drop:nth-child(10){animation-delay:-1300ms;}"
+                  + "#artitalk_main .artitalk_loading_text{font-family: Helvetica,\"Helvetica Neue\",sans-serif;letter-spacing:1px;text-align:center;margin-left:-43px;font-weight:bold;margin-top:20px;font-size:11px;color:#a0a0a0;width:200px;}"
+                  + "#artitalk_main .shuoshuoimg{cursor:pointer;transition: all 1s;z-index: 2;}"
+                  + "#artitalk_main .shuoshuoimg:hover{transform:scale(3.5);}"
+                  + "#artitalk_main .hide,#operare_artitalk .hide{display: none;}"
+                  + "#operare_artitalk .c1{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,0.5);z-index:2;}"
+                  + "#operare_artitalk .c2{background-color:#fff;position:fixed;width: 400px;height:auto;top:50%;left:50%;z-index:3;margin-top:-150px;margin-left:-200px;box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);opacity:0.85;border:0;border-radius:10px;}"
+                  + "#operare_artitalk .shuoshuo_input_log{outline-style:none;margin-top:10px;border: 1px solid #ccc;border-radius: 6px;padding: 8px 16px;font-size:12px;background-color:transparent;color:#999;}"
+                  + "#artitalk_main .delete_right{cursor:pointer;width:12px;height:12px;position:absolute;right: 12px;}"  
+                  + "#artitalk_main svg {display: inline;}"
+                  + "#artitalk_main .cbp_tmlabel>p,#artitalk_main h1,#artitalk_main h2,#artitalk_main h3,#artitalk_main h4,#artitalk_main h5,#artitalk_main h6,#artitalk_main em{word-wrap:break-word;word-break:break-all;}"
+                  + "#artitalk_main .shuoshuo_emoji{border:1px solid #ccc;border-radius:6px 6px 0 0;height:120px;overflow:auto;margin-top:10px;border-bottom:none;}"
+                  + "#artitalk_main .atemoji{max-height:28px;width:28px;display:inline;vertical-align: middle;}"
+                  + "#artitalk_main .shuoshuo_emoji>.atemoji{cursor:pointer;margin:0 0 0 10px;display: inline;}"
+                  + "#artitalk_main i>.atemoji{cursor:pointer;margin:0 0 0 10px;}"
+                  + "#artitalk_main .shuoshuo_emoji>a{display:inline;}"
+                  + "#artitalk_main #preview>p>.atemoji{display:inline;}"
+                  + "#artitalk_main .shuoshuo_emoji>.atemoji:hover{transform: scale(1.5);}"
+                  + "#artitalk_main div#shuoshuo_emojiswitch{height:40px;width:auto;border-radius:0 0 6px 6px;border-collapse:collapse;border:1px solid #ccc;border-top:none;}"
+                  + "#artitalk_main .shuoshuo_emoji_part{width:25%;cursor:pointer;align-content:center;text-align:center;line-height: 40px;}"
+                  + "#artitalk_main .shuoshuo_emoji_part:hover{background-color:#ccc;color:#fff;}"
+                  + "#artitalk_main .zuiliangdezai{background-color:#ccc;color: #fff;}"
+                  + "#artitalk_main .pingjun{display: flex;}"
+                  + "#artitalk_main #article-container img{margin: 0 0 0 0;}"
+                  + "#artitalk_main .preview_now{display: none;}"
+                  + "#artitalk_main div#loading_txt{font-size:20px;}"
+                  + "#artitalk_main audio{display:block;width:100%;outline:none;opacity: 0.8;}"
+                  + "#artitalk_main video{z-index: 0;}"
+                  + "p.shuoshuo_time>span>a:hover{color: red;}"
+                  + "p.shuoshuo_time>span>a{color:black;text-decoration:none;}"
+                  + "#artitalk_main textarea#neirong:focus{background-position-y:150px;transition: all 0.35s}";
         atStyle.type = "text/css";
         atStyle.id = "add-Artitalk-Style";
         atStyle.innerHTML = atCss;
@@ -76,11 +159,112 @@ var sytalk = new function() {
       document.head.appendChild(blackAndWhiteStyleElement);
     }
     // 主体HTML
-    let atHtml = "<div id='artitalk_part1'><div id='shuoshuo_content'><div id='ccontent'><ul class='cbp_tmtimeline' id='maina'></ul></div><div id='readButton' style=''><center><button id='readmore' class='at_button' style='margin-bottom: 15px;display: none'>" + atText.text1 + "</button></center></div></div><div id='shuoshuo_input' class='shuoshuo_active' style='display: none;'><div id='shuoshuo_edit'><textarea class='shuoshuo_text' oninput='preview()' id='neirong' placeholder='" + that.config.shuoPla + "'style='background-image: url('" + that.config.bgImg + "');z-index: 0'></textarea><span id='drag_area' class='z-index: -1;'></span></div><div id='shuoshuo_parttwo' class='shuoshuo_parttwo'><div id='shuoshuo_emoji_Tieba' class='shuoshuo_emoji' style='display: none'></div><div id='shuoshuo_emoji_BiliBili' class='shuoshuo_emoji' style='display: none'></div><div id='shuoshuo_emoji_QQ' class='shuoshuo_emoji' style='display: none'></div><div id='shuoshuo_emoji_custom' class='shuoshuo_emoji' style='display: none'></div><div id='shuoshuo_emojiswitch' class='shuoshuo_emojiswitch' style='display: none'><div id='switch_1' class='shuoshuo_emoji_part zuiliangdezai'>Tieba</div><div id='switch_2' class='shuoshuo_emoji_part'>BiliBili</div><div id='switch_3' class='shuoshuo_emoji_part'>QQ</div><div id='switch_4' class='shuoshuo_emoji_part'>Custom</div></div><div id='preview' class='preview_now'></div></div><div class='shuoshuo_submit'><div class='shuoshuo_row'><input class='artitalk_child shuoshuo_inputs' style='display: none' id='email' value='' placeholder='" + atText.text18 + "'><input class='artitalk_child shuoshuo_inputs' style='display: none' id='commentNick' value='' placeholder='" + atText.text18 + "'><div class='artitalk_child'><button class='at_button' id='atSave' style='float: right;'>" + atText.text3 + "</button><button class='at_button' id='commentSave' style='display:none;float: right;'>" + atText.text3 + "</button><button class='at_button' id='atPreview' style='float: right;'>" + atText.text2 + "</button><button class='at_button' id='loadEmoji' style='float: right;'>" + atText.text22 + "</button></div></div></div></div></div><div class='power'><div style='font-size: 25px;display: none; cursor: pointer' id='pubComment'><svg t='1591347684072' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9731' width='30' height='30' style=''><path d='M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0z m0 953.62C268.49 953.62 70.38 755.51 70.38 512S268.49 70.38 512 70.38 953.62 268.49 953.62 512 755.51 953.62 512 953.62z' p-id='9732' fill='#707070'></path> <path d='M771.1 726.4H514.8c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23h256.3c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM771.1 654.55H587.92c-15.56 0-28.23 12.66-28.23 28.23S572.35 711 587.92 711H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.22-28.23-28.22zM771.1 582.69H654.22c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM809.25 361.96c0-14.79-5.74-28.68-16.17-39.1L657.66 187.45c-10.43-10.43-24.32-16.17-39.1-16.17s-28.67 5.74-39.1 16.17L207.23 559.67c-5.06 5.06-7.88 12.06-7.72 19.21l3.61 172.49a26.32 26.32 0 0 0 25.8 25.83l172.6 3.81c0.22 0.01 0.44 0.01 0.67 0.01 6.95 0 13.76-2.82 18.66-7.73l372.22-372.22c10.43-10.43 16.18-24.32 16.18-39.11z m-53.5 1.79L391.5 727.99l-136.14-3-2.85-135.96 364.25-364.26c0.99-0.98 2.59-0.98 3.58-0.01l135.4 135.41c0.99 0.99 0.99 2.59 0.01 3.58z' p-id='9733' fill='#707070'></path></svg></div><div style='font-size: 25px;display: inline; cursor: pointer' id='pubShuo' title='" + atText.text11 + "'><svg t='1591347684072'  viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9731' width='30' height='30'  style='display: inline'><path d='M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0z m0 953.62C268.49 953.62 70.38 755.51 70.38 512S268.49 70.38 512 70.38 953.62 268.49 953.62 512 755.51 953.62 512 953.62z' p-id='9732' fill='#707070'></path><path d='M771.1 726.4H514.8c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23h256.3c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM771.1 654.55H587.92c-15.56 0-28.23 12.66-28.23 28.23S572.35 711 587.92 711H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.22-28.23-28.22zM771.1 582.69H654.22c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM809.25 361.96c0-14.79-5.74-28.68-16.17-39.1L657.66 187.45c-10.43-10.43-24.32-16.17-39.1-16.17s-28.67 5.74-39.1 16.17L207.23 559.67c-5.06 5.06-7.88 12.06-7.72 19.21l3.61 172.49a26.32 26.32 0 0 0 25.8 25.83l172.6 3.81c0.22 0.01 0.44 0.01 0.67 0.01 6.95 0 13.76-2.82 18.66-7.73l372.22-372.22c10.43-10.43 16.18-24.32 16.18-39.11z m-53.5 1.79L391.5 727.99l-136.14-3-2.85-135.96 364.25-364.26c0.99-0.98 2.59-0.98 3.58-0.01l135.4 135.41c0.99 0.99 0.99 2.59 0.01 3.58z' p-id='9733' fill='#707070'></path></svg></div><div class='copyright'>Powered By <a href='https://artitalk.js.org' target='_blank'>Artitalk</a><br />" + atVersion + "</div></div>";
+    let atHtml = "<div id='artitalk_part1'>"
+               + "  <div id='shuoshuo_content'>"
+               + "    <div id='ccontent'>"
+               + "      <ul class='cbp_tmtimeline' id='maina'></ul>"
+               + "    </div>"
+               + "    <div id='readButton' style=''>"
+               + "      <center>"
+               + "        <button id='readmore' class='at_button' style='margin-bottom: 15px;display: none'>" + atText.text1 + "</button>"
+               + "      </center>"
+               + "    </div>"
+               + "  </div>"
+               + "  <div id='shuoshuo_input' class='shuoshuo_active' style='display: none;'>"
+               + "    <div id='shuoshuo_edit'>"
+               + "      <textarea class='shuoshuo_text' oninput='preview()' id='neirong' placeholder='" + that.config.shuoPla + "'style='background-image: url('" + that.config.bgImg + "');z-index: 0'></textarea>"
+               + "      <span id='drag_area' class='z-index: -1;'></span>"
+               + "    </div>"
+               + "    <div id='shuoshuo_parttwo' class='shuoshuo_parttwo'>"
+               + "      <div id='shuoshuo_emoji_Tieba' class='shuoshuo_emoji' style='display: none'></div>"
+               + "      <div id='shuoshuo_emoji_BiliBili' class='shuoshuo_emoji' style='display: none'></div>"
+               + "      <div id='shuoshuo_emoji_QQ' class='shuoshuo_emoji' style='display: none'></div>"
+               + "      <div id='shuoshuo_emoji_custom' class='shuoshuo_emoji' style='display: none'></div>"
+               + "      <div id='shuoshuo_emojiswitch' class='shuoshuo_emojiswitch' style='display: none'>"
+               + "        <div id='switch_1' class='shuoshuo_emoji_part zuiliangdezai'>Tieba</div>"
+               + "        <div id='switch_2' class='shuoshuo_emoji_part'>BiliBili</div>"
+               + "        <div id='switch_3' class='shuoshuo_emoji_part'>QQ</div>"
+               + "        <div id='switch_4' class='shuoshuo_emoji_part'>Custom</div>"
+               + "      </div>"
+               + "      <div id='preview' class='preview_now'></div>"
+               + "    </div>"
+               + "    <div class='shuoshuo_submit'>"
+               + "      <div class='shuoshuo_row'>"
+               + "        <input class='artitalk_child shuoshuo_inputs' style='display: none' id='email' value='' placeholder='" + atText.text18 + "'>"
+               + "        <input class='artitalk_child shuoshuo_inputs' style='display: none' id='commentNick' value='' placeholder='" + atText.text18 + "'>"
+               + "        <div class='artitalk_child'>"
+               + "          <button class='at_button' id='atSave' style='float: right;'>" + atText.text3 + "</button>"
+               + "          <button class='at_button' id='commentSave' style='display:none;float: right;'>" + atText.text3 + "</button>"
+               + "          <button class='at_button' id='atPreview' style='float: right;'>" + atText.text2 + "</button>"
+               + "          <button class='at_button' id='loadEmoji' style='float: right;'>" + atText.text22 + "</button>"
+               + "        </div>"
+               + "      </div>"
+               + "    </div>"
+               + "  </div>"
+               + "</div>"
+               + "<div class='power'>"
+               + "  <div style='font-size: 25px;display: none; cursor: pointer' id='pubComment'>"
+               + "    <svg t='1591347684072' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9731' width='30' height='30' style=''><path d='M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0z m0 953.62C268.49 953.62 70.38 755.51 70.38 512S268.49 70.38 512 70.38 953.62 268.49 953.62 512 755.51 953.62 512 953.62z' p-id='9732' fill='#707070'></path> <path d='M771.1 726.4H514.8c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23h256.3c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM771.1 654.55H587.92c-15.56 0-28.23 12.66-28.23 28.23S572.35 711 587.92 711H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.22-28.23-28.22zM771.1 582.69H654.22c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM809.25 361.96c0-14.79-5.74-28.68-16.17-39.1L657.66 187.45c-10.43-10.43-24.32-16.17-39.1-16.17s-28.67 5.74-39.1 16.17L207.23 559.67c-5.06 5.06-7.88 12.06-7.72 19.21l3.61 172.49a26.32 26.32 0 0 0 25.8 25.83l172.6 3.81c0.22 0.01 0.44 0.01 0.67 0.01 6.95 0 13.76-2.82 18.66-7.73l372.22-372.22c10.43-10.43 16.18-24.32 16.18-39.11z m-53.5 1.79L391.5 727.99l-136.14-3-2.85-135.96 364.25-364.26c0.99-0.98 2.59-0.98 3.58-0.01l135.4 135.41c0.99 0.99 0.99 2.59 0.01 3.58z' p-id='9733' fill='#707070'></path></svg>"
+               + "  </div>"
+               + "  <div style='font-size: 25px;display: inline; cursor: pointer' id='pubShuo' title='" + atText.text11 + "'>"
+               + "    <svg t='1591347684072' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9731' width='30' height='30'  style='display: inline'><path d='M512 0C229.23 0 0 229.23 0 512s229.23 512 512 512 512-229.23 512-512S794.77 0 512 0z m0 953.62C268.49 953.62 70.38 755.51 70.38 512S268.49 70.38 512 70.38 953.62 268.49 953.62 512 755.51 953.62 512 953.62z' p-id='9732' fill='#707070'></path><path d='M771.1 726.4H514.8c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23h256.3c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM771.1 654.55H587.92c-15.56 0-28.23 12.66-28.23 28.23S572.35 711 587.92 711H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.22-28.23-28.22zM771.1 582.69H654.22c-15.57 0-28.23 12.66-28.23 28.23s12.66 28.23 28.23 28.23H771.1c15.57 0 28.23-12.66 28.23-28.23s-12.67-28.23-28.23-28.23zM809.25 361.96c0-14.79-5.74-28.68-16.17-39.1L657.66 187.45c-10.43-10.43-24.32-16.17-39.1-16.17s-28.67 5.74-39.1 16.17L207.23 559.67c-5.06 5.06-7.88 12.06-7.72 19.21l3.61 172.49a26.32 26.32 0 0 0 25.8 25.83l172.6 3.81c0.22 0.01 0.44 0.01 0.67 0.01 6.95 0 13.76-2.82 18.66-7.73l372.22-372.22c10.43-10.43 16.18-24.32 16.18-39.11z m-53.5 1.79L391.5 727.99l-136.14-3-2.85-135.96 364.25-364.26c0.99-0.98 2.59-0.98 3.58-0.01l135.4 135.41c0.99 0.99 0.99 2.59 0.01 3.58z' p-id='9733' fill='#707070'></path></svg>"
+               + "  </div>"
+               + "  <div class='copyright'>Powered By <a href='https://artitalk.js.org' target='_blank'>Artitalk</a><br />" + atVersion + "</div>"
+               + "</div>";
     // 加载动画
-    let motionHtml = "<div id='lazy'><div class='preloader' style='opacity: 1; '><svg version='1.1' id='sun' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px'y='0px' width='10px' height='10px' viewBox='0 0 10 10' enable-background='new 0 0 10 10' xml:space='preserve'style='opacity: 1; margin-left: 0px; margin-top: 0px;'><g><path fill='none'd='M6.942,3.876c-0.4-0.692-1.146-1.123-1.946-1.123c-0.392,0-0.779,0.104-1.121,0.301c-1.072,0.619-1.44,1.994-0.821,3.067C3.454,6.815,4.2,7.245,5,7.245c0.392,0,0.779-0.104,1.121-0.301C6.64,6.644,7.013,6.159,7.167,5.581C7.321,5,7.243,4.396,6.942,3.876z M6.88,5.505C6.745,6.007,6.423,6.427,5.973,6.688C5.676,6.858,5.34,6.948,5,6.948c-0.695,0-1.343-0.373-1.69-0.975C2.774,5.043,3.093,3.849,4.024,3.312C4.32,3.14,4.656,3.05,4.996,3.05c0.695,0,1.342,0.374,1.69,0.975C6.946,4.476,7.015,5,6.88,5.505z'></path><path fill='none'd='M8.759,2.828C8.718,2.757,8.626,2.732,8.556,2.774L7.345,3.473c-0.07,0.041-0.094,0.132-0.053,0.202C7.319,3.723,7.368,3.75,7.419,3.75c0.025,0,0.053-0.007,0.074-0.02l1.211-0.699C8.774,2.989,8.8,2.899,8.759,2.828z'></path><path fill='none'd='M1.238,7.171c0.027,0.047,0.077,0.074,0.128,0.074c0.025,0,0.051-0.008,0.074-0.02l1.211-0.699c0.071-0.041,0.095-0.133,0.054-0.203S2.574,6.228,2.503,6.269l-1.21,0.699C1.221,7.009,1.197,7.101,1.238,7.171z'></path><path fill='none'd='M6.396,2.726c0.052,0,0.102-0.026,0.13-0.075l0.349-0.605C6.915,1.976,6.89,1.885,6.819,1.844c-0.07-0.042-0.162-0.017-0.202,0.054L6.269,2.503C6.228,2.574,6.251,2.666,6.322,2.706C6.346,2.719,6.371,2.726,6.396,2.726z'></path><path fill='none'd='M3.472,7.347L3.123,7.952c-0.041,0.07-0.017,0.162,0.054,0.203C3.2,8.169,3.226,8.175,3.25,8.175c0.052,0,0.102-0.027,0.129-0.074l0.349-0.605c0.041-0.07,0.017-0.16-0.054-0.203C3.603,7.251,3.513,7.276,3.472,7.347z'></path><path fill='none'd='M3.601,2.726c0.025,0,0.051-0.007,0.074-0.02C3.746,2.666,3.77,2.574,3.729,2.503l-0.35-0.604C3.338,1.828,3.248,1.804,3.177,1.844C3.106,1.886,3.082,1.976,3.123,2.047l0.35,0.604C3.5,2.7,3.549,2.726,3.601,2.726z'></path><path fill='none'd='M6.321,7.292c-0.07,0.043-0.094,0.133-0.054,0.203l0.351,0.605c0.026,0.047,0.076,0.074,0.127,0.074c0.025,0,0.051-0.006,0.074-0.02c0.072-0.041,0.096-0.133,0.055-0.203l-0.35-0.605C6.483,7.276,6.393,7.253,6.321,7.292z'></path><path fill='none'd='M2.202,5.146c0.082,0,0.149-0.065,0.149-0.147S2.284,4.851,2.202,4.851H1.503c-0.082,0-0.148,0.066-0.148,0.148s0.066,0.147,0.148,0.147H2.202z'></path><path fill='none'd='M8.493,4.851H7.794c-0.082,0-0.148,0.066-0.148,0.148s0.066,0.147,0.148,0.147l0,0h0.699c0.082,0,0.148-0.065,0.148-0.147S8.575,4.851,8.493,4.851L8.493,4.851z'></path><path fill='none'd='M5.146,2.203V0.805c0-0.082-0.066-0.148-0.148-0.148c-0.082,0-0.148,0.066-0.148,0.148v1.398c0,0.082,0.066,0.149,0.148,0.149C5.08,2.352,5.146,2.285,5.146,2.203z'></path><path fill='none'd='M4.85,7.796v1.396c0,0.082,0.066,0.15,0.148,0.15c0.082,0,0.148-0.068,0.148-0.15V7.796c0-0.082-0.066-0.148-0.148-0.148C4.917,7.647,4.85,7.714,4.85,7.796z'></path><path fill='none'd='M2.651,3.473L1.44,2.774C1.369,2.732,1.279,2.757,1.238,2.828C1.197,2.899,1.221,2.989,1.292,3.031l1.21,0.699c0.023,0.013,0.049,0.02,0.074,0.02c0.051,0,0.101-0.026,0.129-0.075C2.747,3.604,2.722,3.514,2.651,3.473z'></path><path fill='none'd='M8.704,6.968L7.493,6.269c-0.07-0.041-0.162-0.016-0.201,0.055c-0.041,0.07-0.018,0.162,0.053,0.203l1.211,0.699c0.023,0.012,0.049,0.02,0.074,0.02c0.051,0,0.102-0.027,0.129-0.074C8.8,7.101,8.776,7.009,8.704,6.968z'</path></g></svg><svg version='1.1' id='cloud' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'x='0px' y='0px' width='110px' height='110px' viewBox='0 0 10 10' enable-background='new 0 0 10 10'xml:space='preserve'><path fill='none'd='M8.528,5.624H8.247c-0.085,0-0.156-0.068-0.156-0.154c0-0.694-0.563-1.257-1.257-1.257c-0.098,0-0.197,0.013-0.3,0.038C6.493,4.259,6.45,4.252,6.415,4.229C6.38,4.208,6.356,4.172,6.348,4.131C6.117,3.032,5.135,2.235,4.01,2.235c-1.252,0-2.297,0.979-2.379,2.23c-0.004,0.056-0.039,0.108-0.093,0.13C1.076,4.793,0.776,5.249,0.776,5.752c0,0.693,0.564,1.257,1.257,1.257h6.495c0.383,0,0.695-0.31,0.695-0.692S8.911,5.624,8.528,5.624z'></path></svg><div class='rain'><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span><span class='drop'></span></div><div class='artitalk_loading_text' id='loading_txt'>" + atText.loadingTxT + "</div></div></div>";
+    let motionHtml = "<div id='lazy'>"
+                   + "  <div class='preloader' style='opacity: 1; '>"
+                   + "    <svg version='1.1' id='sun' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px'y='0px' width='10px' height='10px' viewBox='0 0 10 10' enable-background='new 0 0 10 10' xml:space='preserve'style='opacity: 1; margin-left: 0px; margin-top: 0px;'><g><path fill='none'd='M6.942,3.876c-0.4-0.692-1.146-1.123-1.946-1.123c-0.392,0-0.779,0.104-1.121,0.301c-1.072,0.619-1.44,1.994-0.821,3.067C3.454,6.815,4.2,7.245,5,7.245c0.392,0,0.779-0.104,1.121-0.301C6.64,6.644,7.013,6.159,7.167,5.581C7.321,5,7.243,4.396,6.942,3.876z M6.88,5.505C6.745,6.007,6.423,6.427,5.973,6.688C5.676,6.858,5.34,6.948,5,6.948c-0.695,0-1.343-0.373-1.69-0.975C2.774,5.043,3.093,3.849,4.024,3.312C4.32,3.14,4.656,3.05,4.996,3.05c0.695,0,1.342,0.374,1.69,0.975C6.946,4.476,7.015,5,6.88,5.505z'></path><path fill='none'd='M8.759,2.828C8.718,2.757,8.626,2.732,8.556,2.774L7.345,3.473c-0.07,0.041-0.094,0.132-0.053,0.202C7.319,3.723,7.368,3.75,7.419,3.75c0.025,0,0.053-0.007,0.074-0.02l1.211-0.699C8.774,2.989,8.8,2.899,8.759,2.828z'></path><path fill='none'd='M1.238,7.171c0.027,0.047,0.077,0.074,0.128,0.074c0.025,0,0.051-0.008,0.074-0.02l1.211-0.699c0.071-0.041,0.095-0.133,0.054-0.203S2.574,6.228,2.503,6.269l-1.21,0.699C1.221,7.009,1.197,7.101,1.238,7.171z'></path><path fill='none'd='M6.396,2.726c0.052,0,0.102-0.026,0.13-0.075l0.349-0.605C6.915,1.976,6.89,1.885,6.819,1.844c-0.07-0.042-0.162-0.017-0.202,0.054L6.269,2.503C6.228,2.574,6.251,2.666,6.322,2.706C6.346,2.719,6.371,2.726,6.396,2.726z'></path><path fill='none'd='M3.472,7.347L3.123,7.952c-0.041,0.07-0.017,0.162,0.054,0.203C3.2,8.169,3.226,8.175,3.25,8.175c0.052,0,0.102-0.027,0.129-0.074l0.349-0.605c0.041-0.07,0.017-0.16-0.054-0.203C3.603,7.251,3.513,7.276,3.472,7.347z'></path><path fill='none'd='M3.601,2.726c0.025,0,0.051-0.007,0.074-0.02C3.746,2.666,3.77,2.574,3.729,2.503l-0.35-0.604C3.338,1.828,3.248,1.804,3.177,1.844C3.106,1.886,3.082,1.976,3.123,2.047l0.35,0.604C3.5,2.7,3.549,2.726,3.601,2.726z'></path><path fill='none'd='M6.321,7.292c-0.07,0.043-0.094,0.133-0.054,0.203l0.351,0.605c0.026,0.047,0.076,0.074,0.127,0.074c0.025,0,0.051-0.006,0.074-0.02c0.072-0.041,0.096-0.133,0.055-0.203l-0.35-0.605C6.483,7.276,6.393,7.253,6.321,7.292z'></path><path fill='none'd='M2.202,5.146c0.082,0,0.149-0.065,0.149-0.147S2.284,4.851,2.202,4.851H1.503c-0.082,0-0.148,0.066-0.148,0.148s0.066,0.147,0.148,0.147H2.202z'></path><path fill='none'd='M8.493,4.851H7.794c-0.082,0-0.148,0.066-0.148,0.148s0.066,0.147,0.148,0.147l0,0h0.699c0.082,0,0.148-0.065,0.148-0.147S8.575,4.851,8.493,4.851L8.493,4.851z'></path><path fill='none'd='M5.146,2.203V0.805c0-0.082-0.066-0.148-0.148-0.148c-0.082,0-0.148,0.066-0.148,0.148v1.398c0,0.082,0.066,0.149,0.148,0.149C5.08,2.352,5.146,2.285,5.146,2.203z'></path><path fill='none'd='M4.85,7.796v1.396c0,0.082,0.066,0.15,0.148,0.15c0.082,0,0.148-0.068,0.148-0.15V7.796c0-0.082-0.066-0.148-0.148-0.148C4.917,7.647,4.85,7.714,4.85,7.796z'></path><path fill='none'd='M2.651,3.473L1.44,2.774C1.369,2.732,1.279,2.757,1.238,2.828C1.197,2.899,1.221,2.989,1.292,3.031l1.21,0.699c0.023,0.013,0.049,0.02,0.074,0.02c0.051,0,0.101-0.026,0.129-0.075C2.747,3.604,2.722,3.514,2.651,3.473z'></path><path fill='none'd='M8.704,6.968L7.493,6.269c-0.07-0.041-0.162-0.016-0.201,0.055c-0.041,0.07-0.018,0.162,0.053,0.203l1.211,0.699c0.023,0.012,0.049,0.02,0.074,0.02c0.051,0,0.102-0.027,0.129-0.074C8.8,7.101,8.776,7.009,8.704,6.968z'</path></g></svg><svg version='1.1' id='cloud' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'x='0px' y='0px' width='110px' height='110px' viewBox='0 0 10 10' enable-background='new 0 0 10 10'xml:space='preserve'><path fill='none'd='M8.528,5.624H8.247c-0.085,0-0.156-0.068-0.156-0.154c0-0.694-0.563-1.257-1.257-1.257c-0.098,0-0.197,0.013-0.3,0.038C6.493,4.259,6.45,4.252,6.415,4.229C6.38,4.208,6.356,4.172,6.348,4.131C6.117,3.032,5.135,2.235,4.01,2.235c-1.252,0-2.297,0.979-2.379,2.23c-0.004,0.056-0.039,0.108-0.093,0.13C1.076,4.793,0.776,5.249,0.776,5.752c0,0.693,0.564,1.257,1.257,1.257h6.495c0.383,0,0.695-0.31,0.695-0.692S8.911,5.624,8.528,5.624z'></path></svg>"
+                   + "    <div class='rain'>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "      <span class='drop'></span>"
+                   + "    </div>"
+                   + "    <div class='artitalk_loading_text' id='loading_txt'>" + atText.loadingTxT + "</div>"
+                   + "  </div>"
+                   + "</div>";
     // 加载动画
-    let atOpHtml = "<div id='shade' class='c1' style='display: none'></div><div id='shuoshuo-modal' class='c2' style='display: none'><center><p>" + atText.text7 + "：<input type='text' class='shuoshuo_input_log' id='username'/></p><p>" + atText.text8 + "：<input type='password' class='shuoshuo_input_log'  id='pwd'/></p><p><input type='button' value='" + atText.text9 + "' class='at_button' id='login'>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='" + atText.text10 + "'  class='at_button' id = 'celLogin'></p></center><center><div id='logw' style='color: red'></div></center></div><div id='userinfo' class='c2' style='display: none'><center><p><div id='status'></div></p><p><input type='button' class='at_button' value='" + atText.text5 + "' id='hideuser'>&nbsp;&nbsp;&nbsp;&nbsp;<input id='tui' type='button' value='" + atText.text6 + "' class='at_button' style='display: none;' onclick='Logout();'></p></center></div><div id='shanchu' class='c2' style='display: none'><center><p>" + atText.text20 + "</p><p><input type='button' class='at_button' value='" + atText.text5 + "' id='deleteSus'></p><center></div><div id='shanchur' class='c2' style='display: none'><center><p>" + atText.text19 + "</p><p><div id='delete1'></div></p></center></div><div id='clickForPreview'></div>";
+    let atOpHtml = "<div id='shade' class='c1' style='display: none'></div>"
+                 + "  <div id='shuoshuo-modal' class='c2' style='display: none'>"
+                 + "    <center>"
+                 + "      <p>" + atText.text7 + "：<input type='text' class='shuoshuo_input_log' id='username'/></p>"
+                 + "      <p>" + atText.text8 + "：<input type='password' class='shuoshuo_input_log'  id='pwd'/></p>"
+                 + "      <p><input type='button' value='" + atText.text9 + "' class='at_button' id='login'>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='" + atText.text10 + "'  class='at_button' id = 'celLogin'></p>"
+                 + "    </center>"
+                 + "    <center>"
+                 + "      <div id='logw' style='color: red'></div>"
+                 + "    </center>"
+                 + "  </div>"
+                 + "  <div id='userinfo' class='c2' style='display: none'>"
+                 + "    <center>"
+                 + "      <p><div id='status'></div></p>"
+                 + "      <p>"
+                 + "        <input type='button' class='at_button' value='" + atText.text5 + "' id='hideuser'>&nbsp;&nbsp;&nbsp;&nbsp;"
+                 + "        <input id='tui' type='button' value='" + atText.text6 + "' class='at_button' style='display: none;' onclick='Logout();'>"
+                 + "      </p>"
+                 + "    </center>"
+                 + "  </div>"
+                 + "  <div id='shanchu' class='c2' style='display: none'>"
+                 + "    <center>"
+                 + "      <p>" + atText.text20 + "</p>"
+                 + "      <p><input type='button' class='at_button' value='" + atText.text5 + "' id='deleteSus'></p>"
+                 + "    </center>"
+                 + "  </div>"
+                 + "  <div id='shanchur' class='c2' style='display: none'>"
+                 + "    <center>"
+                 + "      <p>" + atText.text19 + "</p>"
+                 + "      <p><div id='delete1'></div></p>"
+                 + "    </center>"
+                 + "  </div>"
+                 + "  <div id='clickForPreview'></div>"
+                 + "</div>";
     // 输出html
     var atOp = document.createElement('div');
     atOp.id = 'operare_artitalk';
@@ -89,10 +273,11 @@ var sytalk = new function() {
     document.getElementById('artitalk_main').innerHTML = motionHtml + atHtml;
     // 这里第一次加载说说
     that.loadContent(that.pageNum);
-    // 获取对应的对象
+    // 阅读更多按钮响应事件
     document.getElementById('readmore').onclick = function () {
       that.loadContent(that.pageNum);
     }
+
     return that; 
   }
   // 加载说说
@@ -133,9 +318,8 @@ var sytalk = new function() {
           let contentli = '<li><span class="shuoshuo_author_img" onclick="javascript:atEdit(\"' + atContent.id + '\");"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="artitalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><div ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right"><svg t="1591347978744" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14459" width="20" height="20" style="display: inline"  onclick="delete(\"' + atContent.id + '\")"><path d="M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z" p-id="14460" fill="' + atText.color3 + '"></path><path d="M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z" p-id="14461" fill="' + atText.color3 + '"></path></svg></div><div id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span>' + atOs[os] + os + '</span><span>&nbsp&nbsp' + '<svg t="1591350196611" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24683" width="10" height="10" style="display: inline"><path d="M171.605333 622.933333a341.333333 341.333333 0 1 1 680.789334 0h150.186666a21.333333 21.333333 0 1 1 0 42.666667H21.418667a21.333333 21.333333 0 1 1 0-42.666667h150.229333z m637.994667 0a298.666667 298.666667 0 1 0-595.2 0h595.2z" fill="' + atText.color3 + '" p-id="24684"></path></svg>' + nowDate + '</span></p></span></li>';
           // 把内容追加到列表
           //document.getElementById('ccontent').insertAdjacentHTML('beforeend', contentli);
-          that.appendHTML(document.getElementById('maina'), contentli);
+          document.getElementById('maina').insertAdjacentHTML('beforeend', contentli);
           that.fadeOut('lazy');
-          console.log(that.pageNum, pageTotal);
           if (that.pageNum < pageTotal) {
             that.fadeIn('readmore');
           } else {
@@ -153,17 +337,6 @@ var sytalk = new function() {
   this.timeFormat = function(time) {
     return time < 10 ? '0' + time : time;
   }
-  this.appendHTML = function(obj, html) {
-    var divTemp = document.createElement("div"), nodes = null, fragment = document.createDocumentFragment();
-    // 文档片段，一次性append，提高性能
-    divTemp.innerHTML = html;
-    divTemp.childNodes.forEach(node => {
-      fragment.appendChild(node)
-    })
-    obj.appendChild(fragment);
-    nodes = null;
-    fragment = null;
-  };
   // 显示
   this.fadeIn = function(id) {
     if (!document.getElementById(id)) return;
