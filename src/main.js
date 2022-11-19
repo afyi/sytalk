@@ -3,7 +3,7 @@
 // 版本号
 const atVersion = "1.0.0";
 
-// 表情包，兼容artitalk的
+// 表情包，兼容sytalk的
 const atEmoji = {
   QQ: {name: ["aini", "aixin", "aoman", "baiyan", "bangbangtang", "baojin", "baoquan", "bishi", "bizui", "cahan", "caidao", "chi", "ciya", "dabing", "daku", "dan", "deyi", "doge", "fadai", "fanu", "fendou", "ganga", "gouyin", "guzhang", "haixiu", "hanxiao", "haobang", "haqian", "hecai", "hexie", "huaixiao", "jie", "jingkong", "jingxi", "jingya", "juhua", "keai", "kelian", "koubi", "ku", "kuaikule", "kulou", "kun", "lanqiu", "leiben", "lenghan", "liuhan", "liulei", "nanguo", "OK", "penxue", "piezui", "pijiu", "qiang", "qiaoda", "qinqin", "qiudale", "quantou", "saorao", "se", "shengli", "shouqiang", "shuai", "shui", "tiaopi", "touxiao", "tu", "tuosai", "weiqu", "weixiao", "woshou", "wozuimei", "wunai", "xia", "xiaojiujie", "xiaoku", "xiaoyanger", "xieyanxiao", "xigua", "xu", "yangtuo", "yinxian", "yiwen", "youhengheng", "youling", "yun", "zaijian", "zhayanjian", "zhemo", "zhouma", "zhuakuang", "zuohengheng"], ext: "gif"},
   Tieba: {name: ["OK", "what", "不高兴", "乖", "你懂的", "便便", "勉强", "吐", "吐舌", "呀咩爹", "呵呵", "哈哈", "啊", "喷", "大拇指", "太开心", "太阳", "委屈", "小乖", "小红脸", "彩虹", "心碎", "怒", "惊哭", "惊讶", "懒得理", "手纸", "挖鼻", "捂嘴笑", "星星月亮", "汗", "沙发", "泪", "滑稽", "灯泡", "爱心", "犀利", "狂汗", "玫瑰", "疑问", "真棒", "睡觉", "礼物", "笑尿", "笑眼", "红领巾", "胜利", "花心", "茶杯", "药丸", "蛋糕", "蜡烛", "鄙视", "酷", "酸爽", "钱币", "阴险", "音乐", "香蕉", "黑线"], ext: "png"}, 
@@ -11,7 +11,7 @@ const atEmoji = {
 }
 
 // 相关的字符
-const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "请输入您的用户名", text8: "请输入您的密码", text9: "登   录", text10: "取消", text11: "发布说说", text12: "添加图片，视频，音乐", text14: "已经到底了哦", text15: "请先登录", text16: "内容不能为空", text17: "登陆失败，请检查用户名及密码是否正确", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text21: "请拖拽图片到此处", text22: "表情", text23: "删除", text24: "如果你看到这条说说，恭喜你已经配置成功并且可以正常使用了。当你发布一个说说之后，我将会自动消失。快去探索Artitalk吧<br>欢迎加入Artitalk的QQ交流群：1104585229<br>觉得本项目不错的话可以推荐给你的好友或者去GitHub点一个star，感谢支持", text25: "上传中", text26: "图片", text27: "音乐", text28: "视频", text29: "添加", text30: "上传的图片最大支持5M，请压缩后或换一个继续上传", text31: "上传的音乐最大支持10M，请压缩后或换一个继续上传", text32: "上传的视频最大支持30M，请压缩后或换一个继续上传", text33: "图片格式错误，请不要上传其他类型的文件", text34: "音频格式错误，请不要上传其他类型的文件", text35: "视频格式错误，请不要上传其他类型的文件", textup: "上传ing", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text40: "评论", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
+const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "请输入您的用户名", text8: "请输入您的密码", text9: "登   录", text10: "取消", text11: "发布说说", text12: "添加图片，视频，音乐", text14: "已经到底了哦", text15: "请先登录", text16: "内容不能为空", text17: "登陆失败，请检查用户名及密码是否正确", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text21: "请拖拽图片到此处", text22: "表情", text23: "删除", text24: "如果你看到这条说说，恭喜你已经配置成功并且可以正常使用了。当你发布一个说说之后，我将会自动消失。快去探索sytalk吧<br>欢迎加入sytalk的QQ交流群：1104585229<br>觉得本项目不错的话可以推荐给你的好友或者去GitHub点一个star，感谢支持", text25: "上传中", text26: "图片", text27: "音乐", text28: "视频", text29: "添加", text30: "上传的图片最大支持5M，请压缩后或换一个继续上传", text31: "上传的音乐最大支持10M，请压缩后或换一个继续上传", text32: "上传的视频最大支持30M，请压缩后或换一个继续上传", text33: "图片格式错误，请不要上传其他类型的文件", text34: "音频格式错误，请不要上传其他类型的文件", text35: "视频格式错误，请不要上传其他类型的文件", textup: "上传ing", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text40: "评论", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
 
 // sytalk的方法
 var sytalk = new function() {
@@ -61,7 +61,7 @@ var sytalk = new function() {
       }
     }
     // 这里开始加载Css
-    if (!document.getElementById('add-Artitalk_Style')) {
+    if (!document.getElementById('add-sytalk_Style')) {
       // 如果没有外链样式表，则直接用内置样式
       if (that.config.cssUrl == "") {
         // 加载一下基础样式
@@ -69,115 +69,117 @@ var sytalk = new function() {
         let atCss = ""
           // 定义要用到的变量
           + ":root{--list-even-color:#fff;--list-odd-color:rgba(255, 125, 73, 0.75);--readmore-bg-color:#fff;--main-text-color: #707070; --button-bg-color: #efefef}"
-          + "#artitalk_main{transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);font-family:UbuntuMono;color:var(--main-text-color) }"
-          + "#artitalk_main svg{display:inline;color:var(--main-text-color)}"
-          + "#artitalk_main img{transition: all 0.28s ease;}"
-          + "#artitalk_main .at_button{border: none;margin-left: 5px;color: #333;padding: 8px 16px;text-align: center;text-decoration: none;height: auto;line-height: 20px;display: inline-block;font-size: 12px;border-radius: 12px;outline: none;cursor: pointer;}"
+          + "#sytalk_main{transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);font-family:UbuntuMono;color:var(--main-text-color) }"
+          + "#sytalk_main svg{display:inline;color:var(--main-text-color)}"
+          + "#sytalk_main img{transition: all 0.28s ease;}"
+          + "#sytalk_main ul, #sytalk_main li {list-style: none;}"
+          + "#sytalk_main .at_button{border: none;margin-left: 5px;color: #333;padding: 8px 16px;text-align: center;text-decoration: none;height: auto;line-height: 20px;display: inline-block;font-size: 12px;border-radius: 12px;outline: none;cursor: pointer;}"
+          + "#sytalk_main #shuoshuo_content {padding: 10px}"
           // loading动画
-          + "#artitalk_main #lazy{background:rgba(0,0,0,.2);bottom:0;left:0;position:fixed;right:0;top:0;z-index:9999;}"
-          + "#artitalk_main #lazy .preloader{position:absolute;margin-left:-55px;margin-top:-100px;height:110px;width:110px;left:50%;top:50%;}"
-          + "#artitalk_main #lazy .preloader>svg>g>path{stroke:#9ea1a4;stroke-width:0.25;}"
-          + "#artitalk_main #lazy .preloader>svg>path{stroke:#9ea1a4;stroke-width:0.25;}"
+          + "#sytalk_main #lazy{background:rgba(0,0,0,.2);bottom:0;left:0;position:fixed;right:0;top:0;z-index:9999;}"
+          + "#sytalk_main #lazy .preloader{position:absolute;margin-left:-55px;margin-top:-100px;height:110px;width:110px;left:50%;top:50%;}"
+          + "#sytalk_main #lazy .preloader>svg>g>path{stroke:#9ea1a4;stroke-width:0.25;}"
+          + "#sytalk_main #lazy .preloader>svg>path{stroke:#9ea1a4;stroke-width:0.25;}"
           // 定义云朵
-          + "#artitalk_main #lazy #cloud{position:relative;z-index:2;}"
-          + "#artitalk_main #lazy #cloud path{fill:#efefef;}"
+          + "#sytalk_main #lazy #cloud{position:relative;z-index:2;}"
+          + "#sytalk_main #lazy #cloud path{fill:#efefef;}"
           // 定义太阳
-          + "#artitalk_main #lazy #sun{margin-left:-10px;margin-top:6px;opacity:0;width:60px;height:60px;position:absolute;left:45px;top:15px;z-index:1;animation: rotate 16s infinite linear}"
-          + "#artitalk_main #lazy #sun path{stroke-width:0.18;fill:#9ea1a4;}"
+          + "#sytalk_main #lazy #sun{margin-left:-10px;margin-top:6px;opacity:0;width:60px;height:60px;position:absolute;left:45px;top:15px;z-index:1;animation: rotate 16s infinite linear}"
+          + "#sytalk_main #lazy #sun path{stroke-width:0.18;fill:#9ea1a4;}"
           // 定义雨
-          + "#artitalk_main #lazy .rain{position: absolute;width:70px;height:70px;margin-top:-32px;margin-left:19px;}"
-          + "#artitalk_main #lazy .drop{opacity:1;background:#9ea1a4;display:block;float:left;width:3px;height:10px;margin-left:4px;border-radius:0px 0px 6px 6px;animation: drop 350ms infinite;}"
-          + "#artitalk_main #lazy .drop:nth-child(1){animation-delay:-130ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(2){animation-delay:-240ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(3){animation-delay:-390ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(4){animation-delay:-525ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(5){animation-delay:-640ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(6){animation-delay:-790ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(7){animation-delay:-900ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(8){animation-delay:-1050ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(9){animation-delay:-1130ms;}"
-          + "#artitalk_main #lazy .drop:nth-child(10){animation-delay:-1300ms;}"
+          + "#sytalk_main #lazy .rain{position: absolute;width:70px;height:70px;margin-top:-32px;margin-left:19px;}"
+          + "#sytalk_main #lazy .drop{opacity:1;background:#9ea1a4;display:block;float:left;width:3px;height:10px;margin-left:4px;border-radius:0px 0px 6px 6px;animation: drop 350ms infinite;}"
+          + "#sytalk_main #lazy .drop:nth-child(1){animation-delay:-130ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(2){animation-delay:-240ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(3){animation-delay:-390ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(4){animation-delay:-525ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(5){animation-delay:-640ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(6){animation-delay:-790ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(7){animation-delay:-900ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(8){animation-delay:-1050ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(9){animation-delay:-1130ms;}"
+          + "#sytalk_main #lazy .drop:nth-child(10){animation-delay:-1300ms;}"
           // 列表部分
-          + "#artitalk_main #shuoshuo_content{padding:10px;}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline{margin:30px 0 0 0;padding:0;list-style:none;display:inline;position:relative;}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline li {cursor:pointer}"
+          + "#sytalk_main #shuoshuo_content{padding:10px;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline{margin:30px 0 0 0;padding:0;list-style:none;display:inline;position:relative;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline li {cursor:pointer}"
           // 头像
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img img{border:1px solid #ddd;padding:2px;float:left;border-radius:64px;transition: all 1s;}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img .artitalk_avatar{border-radius:100%;box-shadow:inset 0 -1px 0 3333sf;transition:transform 0.4s ease-out;}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img .artitalk_avatar:hover{transform:rotateZ(360deg);}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img img{border:1px solid #ddd;padding:2px;float:left;border-radius:64px;transition: all 1s;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img .sytalk_avatar{border-radius:100%;box-shadow:inset 0 -1px 0 3333sf;transition:transform 0.4s ease-out;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .shuoshuo_author_img .sytalk_avatar:hover{transform:rotateZ(360deg);}"
           // 说说内容框
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel{margin:0 0 45px 65px;z-index:1;background:var(--list-even-color);color:#333;padding:.8em 1.2em .4em 1.2em;font-weight:300;line-height:1.6;position:relative;border-radius:5px;transition:all .3s ease 0s;box-shadow:0 1px 12px rgba(0,0,0,.3);display:block}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel:after{right:100%;border:solid transparent;z-index:-1;content:' ';height:0;width:0;position:absolute;pointer-events:none;border-right-color:var(--list-even-color);border-width:10px;top:4px;}"
-          + "#artitalk_main #ccontent .cbp_tmlabel:hover {transform:translateY(-3px);z-index:1;box-shadow:0 15px 32px rgba(0,0,0,0.15);}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel img.atemoji{max-height: 28px;width: 28px;display:inline;vertical-align:middle;}"
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel a{text-decoration:none;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel{margin:0 0 45px 65px;z-index:1;background:var(--list-even-color);color:#333;padding:.8em 1.2em .4em 1.2em;font-weight:300;line-height:1.6;position:relative;border-radius:5px;transition:all .3s ease 0s;box-shadow:0 1px 12px rgba(0,0,0,.3);display:block}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel:after{right:100%;border:solid transparent;z-index:-1;content:' ';height:0;width:0;position:absolute;pointer-events:none;border-right-color:var(--list-even-color);border-width:10px;top:4px;}"
+          + "#sytalk_main #ccontent .cbp_tmlabel:hover {transform:translateY(-3px);z-index:1;box-shadow:0 15px 32px rgba(0,0,0,0.15);}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel img.atemoji{max-height: 28px;width: 28px;display:inline;vertical-align:middle;}"
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .cbp_tmlabel a{text-decoration:none;}"
           // 隔行不同色
-          // + "#artitalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel{background: var(--list-odd-color);color:#333;}"
-          // + "#artitalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after{border-right-color: var(--list-odd-color);}"
+          // + "#sytalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel{background: var(--list-odd-color);color:#333;}"
+          // + "#sytalk_main #ccontent .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after{border-right-color: var(--list-odd-color);}"
           // 删除图标
-          + "#artitalk_main #ccontent .cbp_tmtimeline>li .delete_right{cursor:pointer;width:20px;height:20px;position:absolute;right: 12px;display:none}"  
+          + "#sytalk_main #ccontent .cbp_tmtimeline>li .delete_right{cursor:pointer;width:20px;height:20px;position:absolute;right: 12px;display:none}"  
           // 这里是弹框的样式
           // 弹框背景
-          + "#operare_artitalk .c1{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.5)}"
-          + "#operare_artitalk .c2{postion:relative;background:#fff;position:fixed;width:400px;height:auto;top:calc(47% - 150px);left:calc(47% - 200px);z-index:3;opacity:.85;border:0;border-radius:10px;box-shadow:0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);padding:3%}"
-          + "#operare_artitalk .c2 .login_tit{font-family:UbuntuMono;font-size:1.3rem;border-bottom:1px solid #EDEDED;padding-bottom: 15px}"
-          + "#operare_artitalk .c2 .login_input{width: 80%;height:36px;line-height:36px;border-radius:24px;text-align:center;font-size:14px;border: 1px solid #EDEDED;background: #fff;}"
-          + "#operare_artitalk .c2 .login_btn, #operare_artitalk .c2 .logout_btn, #operare_artitalk .c2 .at_button{height:48px;border-radius:28px;color:#888;background:#ededed;font-size:1.3rem;cursor:pointer}"
-          + "#operare_artitalk .c2 #logw{font-size:.9rem}"
-          + "#operare_artitalk .c2 #userAvatar img{border-radius: 100%}"
-          + "#operare_artitalk .c2 #userName {font-size: 1.2rem; color: var(--main-text-color)}"
-          + "#operare_artitalk .c2 #userLogout{height: 36px;line-height: 36px;}"
-          + "#operare_artitalk .c2 #userLogout .logout_btn{width: 80%;border:0;}"
-          + '#operare_artitalk .c2 .closeBtn{position:absolute;right:15px;top:15px}'
-          + '#operare_artitalk .c2 .at_button{width: 80%;border:0;margin-top:5px;background-color:var(--button-bg-color)}'
+          + "#operare_sytalk .c1{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.5)}"
+          + "#operare_sytalk .c2{postion:relative;background:#fff;position:fixed;width:400px;height:auto;top:calc(47% - 150px);left:calc(47% - 200px);z-index:3;opacity:.85;border:0;border-radius:10px;box-shadow:0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%);padding:3%}"
+          + "#operare_sytalk .c2 .login_tit{font-family:UbuntuMono;font-size:1.3rem;border-bottom:1px solid #EDEDED;padding-bottom: 15px}"
+          + "#operare_sytalk .c2 .login_input{width: 90%;height:36px;line-height:48px;margin:16px auto;text-align:center;font-size:14px;border: 1px solid #EDEDED;background: #fff;}"
+          + "#operare_sytalk .c2 .login_btn, #operare_sytalk .c2 .logout_btn, #operare_sytalk .c2 .at_button{height:48px;border-radius:28px;color:#888;background:#ededed;font-size:1.3rem;cursor:pointer}"
+          + "#operare_sytalk .c2 #logw{font-size:.9rem}"
+          + "#operare_sytalk .c2 #userAvatar img{border-radius: 100%}"
+          + "#operare_sytalk .c2 #userName {font-size: 1.2rem; color: var(--main-text-color)}"
+          + "#operare_sytalk .c2 #userLogout{height: 36px;line-height: 36px;}"
+          + "#operare_sytalk .c2 #userLogout .logout_btn{width: 80%;border:0;}"
+          + '#operare_sytalk .c2 .closeBtn{position:absolute;right:15px;top:15px}'
+          + '#operare_sytalk .c2 .at_button{width: 80%;border:0;margin-top:5px;background-color:var(--button-bg-color)}'
           // 输入框
-          + "#artitalk_main #shuoshuo_input .shuoshuo_text{width: 100%;height: 130px;padding: 8px 16px;transition: all 0.35s ease-in-out 0s;outline-style: none;border: 1px solid #ccc;border-radius: 6px;resize: none;background-color: transparent;color: #999;box-sizing:border-box;background:url('" + that.config.bgImg + "') no-repeat right center}"
-          + "#artitalk_main #shuoshuo_input .shuoshuo_text:focus{background-position-y: 150px;}"
-          + "#artitalk_main #shuoshuo_input .shuoshuo_row{display:flex;}"
-          + "#artitalk_main #shuoshuo_input .artitalk_child {margin-left:auto;margin-top:10px}"
-          + "#artitalk_main #shuoshuo_input .artitalk_child button{width: 100px;border-radius:6px}"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_text{width: 100%;height: 130px;padding: 8px 16px;transition: all 0.35s ease-in-out 0s;outline-style: none;border: 1px solid #ccc;border-radius: 6px;resize: none;background-color: transparent;color: #999;box-sizing:border-box;background:url('" + that.config.bgImg + "') no-repeat right center}"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_text:focus{background-position-y: 150px;}"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_row{display:flex;}"
+          + "#sytalk_main #shuoshuo_input .sytalk_child {margin-left:auto;margin-top:10px}"
+          + "#sytalk_main #shuoshuo_input .sytalk_child button{width: 100px;border-radius:6px}"
           // 输入框表情框
-          + "#artitalk_main #shuoshuo_input .shuoshuo_emoji{border: 1px solid #ccc;border-radius: 6px 6px 0 0;height: 120px;overflow: auto;margin-top: 10px;border-bottom: none;}"
-          + "#artitalk_main #shuoshuo_input div#shuoshuo_emojiswitch{display:flex;height: 40px;width: auto;border-radius: 0 0 6px 6px;border-collapse: collapse;border: 1px solid #ccc;border-top-color: var(--button-bg-color);}"
-          + "#artitalk_main #shuoshuo_input .shuoshuo_emoji_part{width:25%;cursor:pointer;align-content:center;text-align:center;line-height:40px;}"
-          + "#artitalk_main #shuoshuo_input .shuoshuo_emoji_part.active{background-color: var(--button-bg-color);color: var(--main-text-color);}"
-          + "#artitalk_main img.atemoji {max-height: 28px;width: 28px;display: inline;vertical-align: middle;cursor: pointer;margin: 10px 0 0 10px;display: inline;}"
-          + "#artitalk_main img.atemoji:hover{transform: scale(1.5)};"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_emoji{border: 1px solid #ccc;border-radius: 6px 6px 0 0;height: 120px;overflow: auto;margin-top: 10px;border-bottom: none;}"
+          + "#sytalk_main #shuoshuo_input div#shuoshuo_emojiswitch{display:flex;height: 40px;width: auto;border-radius: 0 0 6px 6px;border-collapse: collapse;border: 1px solid #ccc;border-top-color: var(--button-bg-color);}"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_emoji_part{width:25%;cursor:pointer;align-content:center;text-align:center;line-height:40px;}"
+          + "#sytalk_main #shuoshuo_input .shuoshuo_emoji_part.active{background-color: var(--button-bg-color);color: var(--main-text-color);}"
+          + "#sytalk_main img.atemoji {max-height: 28px;width: 28px;display: inline;vertical-align: middle;cursor: pointer;margin: 10px 0 0 10px;display: inline;}"
+          + "#sytalk_main img.atemoji:hover{transform: scale(1.5)};"
           // 预览框
           + "#preview{border: 1px solid #f00;border-radius: 6px 6px 0 0;}"
-          + "#artitalk_main #shuoshuo_input #preview img {margin-top: 0}"
+          + "#sytalk_main #shuoshuo_input #preview img {margin-top: 0}"
           // 时间机型样式
-          + "#artitalk_main p.shuoshuo_time{font-size:.95rem;margin:0;border-top: 1px dashed;line-height:2.2rem}"
-          + "#artitalk_main p.shuoshuo_time svg{width: 12px;height:12px;padding-right:3px}"
-          + "#artitalk_main p.shuoshuo_time .os, #artitalk_main p.shuoshuo_time .date{position:relative;padding:0 15px 0 20px}"
-          + "#artitalk_main p.shuoshuo_time .os svg, #artitalk_main p.shuoshuo_time .date svg{position:absolute;left:0;top:1px;width:18px;height:18px;line-height:21px}"
-          + "#artitalk_main p.shuoshuo_time .os svg {width: 16px;height:16px;}"
+          + "#sytalk_main p.shuoshuo_time{font-size:.95rem;margin:10px 0 0;padding-top:5px;border-top: 1px dashed;line-height:2.2rem}"
+          + "#sytalk_main p.shuoshuo_time svg{width: 12px;height:12px;padding-right:3px}"
+          + "#sytalk_main p.shuoshuo_time .os, #sytalk_main p.shuoshuo_time .date{position:relative;padding:0 15px 0 20px}"
+          + "#sytalk_main p.shuoshuo_time .os svg, #sytalk_main p.shuoshuo_time .date svg{position:absolute;left:0;top:1px;width:18px;height:18px;line-height:21px}"
+          + "#sytalk_main p.shuoshuo_time .os svg {width: 16px;height:16px;}"
           // readmore
-          + "#artitalk_main #readButton #readmore{background-color: var(--readmore-bg-color);border:none;color:var(--main-text-color);font-size:medium;font-weight:500;border-radius:8px;outline:0;box-shadow:0 0 8px rgb(0 0 0 / 30%);padding:8px 16px}"
-          + "#artitalk_main #readButton #readmore:hover{box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);}"
+          + "#sytalk_main #readButton #readmore{background-color: var(--readmore-bg-color);border:none;color:var(--main-text-color);font-size:medium;font-weight:500;border-radius:8px;outline:0;box-shadow:0 0 8px rgb(0 0 0 / 30%);padding:8px 16px}"
+          + "#sytalk_main #readButton #readmore:hover{box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);}"
           // 底部图标
-          + "#artitalk_main .power{text-align:center;overflow:hidden;color:#999;margin-top:10px;font-size:.75em;padding:.5em 0;width:100%}"
-          + "#artitalk_main .power div{padding:0 12px}"
-          + "#artitalk_main .copyright{margin: 8px auto}"
-          + "#artitalk_main .copyright a{line-height:1.6rem;font-size:.8rem;color:#bbb;text-decoration:none;font-family:Monaco, Menlo, Helvetica, Arial}"
+          + "#sytalk_main .power{text-align:center;overflow:hidden;color:#999;margin-top:10px;font-size:.75em;padding:.5em 0;width:100%}"
+          + "#sytalk_main .power div{padding:0 12px}"
+          + "#sytalk_main .copyright{margin: 8px auto}"
+          + "#sytalk_main .copyright a{line-height:1.6rem;font-size:.8rem;color:#bbb;text-decoration:none;font-family:Monaco, Menlo, Helvetica, Arial}"
           // 定义动画
           + "@keyframes rotate{0%{transform:rotateZ(0)}100%{transform:rotateZ(360deg)}}"
           + "@keyframes drop{50%{height:45px;opacity:0}51%{opacity:0}100%{height:1px;opacity:0}}"
           + "";
         atStyle.type = "text/css";
-        atStyle.id = "add-Artitalk-Style";
+        atStyle.id = "add-sytalk-Style";
         atStyle.innerHTML = atCss;
         document.head.appendChild(atStyle);
       } else {
         let atStyle = document.createElement('link');
         atStyle.rel = 'stylesheet';
         atStyle.href = that.config.cssUrl;
-        atStyle.id = "add-Artitalk-Style";
+        atStyle.id = "add-sytalk-Style";
         document.head.appendChild(atStyle);
       }
     }
     // 主体HTML
-    let atHtml = "<div id='artitalk_part1'>"
+    let atHtml = "<div id='sytalk_part1'>"
                + "  <div id='shuoshuo_content'>"
                + "    <div id='ccontent'>"
                + "      <ul class='cbp_tmtimeline' id='maina'></ul>"
@@ -207,9 +209,9 @@ var sytalk = new function() {
                + "    </div>"
                + "    <div class='shuoshuo_submit'>"
                + "      <div class='shuoshuo_row'>"
-               + "        <input class='artitalk_child shuoshuo_inputs' style='display: none' id='email' value='' placeholder='" + atText.text18 + "'>"
-               + "        <input class='artitalk_child shuoshuo_inputs' style='display: none' id='commentNick' value='' placeholder='" + atText.text18 + "'>"
-               + "        <div class='artitalk_child'>"
+               + "        <input class='sytalk_child shuoshuo_inputs' style='display: none' id='email' value='' placeholder='" + atText.text18 + "'>"
+               + "        <input class='sytalk_child shuoshuo_inputs' style='display: none' id='commentNick' value='' placeholder='" + atText.text18 + "'>"
+               + "        <div class='sytalk_child'>"
                + "          <button class='at_button' id='atSave'>" + atText.text3 + "</button>"
                + "          <button class='at_button' id='atPreview'>" + atText.text2 + "</button>"
                + "          <button class='at_button' id='loadEmoji'>" + atText.text22 + "</button>"
@@ -232,7 +234,7 @@ var sytalk = new function() {
                + "      <path d='M515.541449 7.082899c-280.359429 0-508.458551 228.120391-508.458551 508.458551s228.120391 508.458551 508.458551 508.458551 508.458551-228.120391 508.458551-508.458551S795.900879 7.082899 515.541449 7.082899zM515.541449 981.864196c-257.132626 0-466.301477-209.190121-466.301477-466.322747 0-257.132626 209.168851-466.322747 466.301477-466.322747s466.301477 209.190121 466.301477 466.322747S772.674075 981.864196 515.541449 981.864196zM614.574414 524.177056 614.574414 524.177056c47.751075-31.96876 79.230625-86.398604 79.230625-148.187857 0-98.437405-79.804915-178.24232-178.24232-178.24232-98.437405 0-178.24232 79.804915-178.24232 178.24232 0 61.810523 31.479551 116.219097 79.251895 148.187857-100.266622 39.519598-171.244501 137.170014-171.244501 251.453545 0 0.23397 0 0.446669 0.02127 0.659369 0 0.04254-0.02127 0.10635-0.02127 0.14889 0 15.612155 12.65563 28.246516 28.267786 28.246516 15.590885 0 21.886796-12.63436 21.886796-28.246516 0-0.340319-0.08508-0.659369-0.10635-1.020958 0.10635-118.005774 102.159649-219.995264 220.207964-219.995264 118.112124 0 220.207964 102.095839 220.207964 220.207964 0 0.14889-1.467628 29.054774 21.971875 29.054774 15.505806 0 28.076356-12.57055 28.076356-28.055086 0-0.06381-0.02127-0.12762-0.02127-0.2127 0-0.25524 0.02127-0.510479 0.02127-0.786989C785.797645 661.34707 714.798496 563.696654 614.574414 524.177056zM515.541449 510.734437c-74.402343 0-134.723968-60.321625-134.723968-134.723968 0-74.423613 60.321625-134.723968 134.723968-134.723968 74.423613 0 134.723968 60.321625 134.723968 134.723968S589.943792 510.734437 515.541449 510.734437z' p-id='12289' fill='#707070'></path>"
                + "    </svg>"
                + "  </div>"
-               + "  <div class='copyright'><a href='https://artitalk.js.org' target='_blank' title='自豪的采用Artitalk评论系统 V" + atVersion + "'>Artitalk  " + atVersion + "</a></div>"
+               + "  <div class='copyright'><a href='https://github.com/afyi/sytalk' target='_blank' title='sytalk评论系统 V" + atVersion + ",基于Artitalk V3.3.4'>sytalk  " + atVersion + "</a></div>"
                + "</div>";
     // 加载动画
     let motionHtml = "<div id='lazy'>"
@@ -250,7 +252,7 @@ var sytalk = new function() {
                    + "      <span class='drop'></span>"
                    + "      <span class='drop'></span>"
                    + "    </div>"
-                   // + "    <div class='artitalk_loading_text' id='loading_txt'>" + atText.loadingTxT + "</div>"
+                   // + "    <div class='sytalk_loading_text' id='loading_txt'>" + atText.loadingTxT + "</div>"
                    + "  </div>"
                    + "</div>";
     // 操作弹出框
@@ -258,9 +260,9 @@ var sytalk = new function() {
                  + "<div id='login' class='c2' style='display: none'>"
                  + "  <a href='javascript:void(0)' title='关闭' class='closeBtn' onclick='sytalk.close(this);'><svg t='1591347978744' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='14459' width='20' height='20' style='display: inline'><path d='M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z' p-id='14460' fill='#707070'></path><path d='M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z' p-id='14461' fill='#707070'></path></svg></a>"
                  + "  <center>"
-                 + "    <p class=\"login_tit\">Artitalk V3.3.4</p>"
-                 + "    <p><input type='text' class='login_input lognin_input_usr' id='artitalk_usr' placeholder='" + atText.text7 + "'/></p>"
-                 + "    <p><input type='password' class='login_input lognin_input_pwd' id='artitalk_pwd' placeholder='" + atText.text8 + "'/></p>"
+                 + "    <p class=\"login_tit\">Sytalk V1.0.0</p>"
+                 + "    <p><input type='text' class='login_input lognin_input_usr' id='sytalk_usr' placeholder='" + atText.text7 + "'/></p>"
+                 + "    <p><input type='password' class='login_input lognin_input_pwd' id='sytalk_pwd' placeholder='" + atText.text8 + "'/></p>"
                  + "    <p><input type='button' value='" + atText.text9 + "' class='login_input login_btn' id='doLogin'></p>"
                  + "  </center>"
                  + "  <center><div id='logw' style='color: red'></div></center>"
@@ -287,10 +289,10 @@ var sytalk = new function() {
                  + "</div>";
     // 输出html
     var atOp = document.createElement('div');
-    atOp.id = 'operare_artitalk';
+    atOp.id = 'operare_sytalk';
     document.body.append(atOp);
-    document.getElementById('operare_artitalk').innerHTML = atOpHtml;
-    document.getElementById('artitalk_main').innerHTML = motionHtml + atHtml;
+    document.getElementById('operare_sytalk').innerHTML = atOpHtml;
+    document.getElementById('sytalk_main').innerHTML = motionHtml + atHtml;
     // 这里第一次加载说说
     that.loadContent(0);
     // 阅读更多按钮响应事件
@@ -339,9 +341,9 @@ var sytalk = new function() {
       document.getElementById('logw').innerHTML = '';
       document.getElementById('doLogin').value = "登陆中";
       // 用户名
-      let userName = document.getElementById('artitalk_usr').value;
+      let userName = document.getElementById('sytalk_usr').value;
       // 密码
-      let passWord = document.getElementById('artitalk_pwd').value;
+      let passWord = document.getElementById('sytalk_pwd').value;
       if (!/^.{1,}$/.test(userName) || !/^.{1,}$/.test(passWord)) {
         document.getElementById('logw').innerHTML = atText.text43;
         that.lock = 0; // 解锁
@@ -445,8 +447,8 @@ var sytalk = new function() {
       let shuoshuoContent = that.trim(document.getElementById('neirong').value);
       if (shuoshuoContent === '') throw '说说内容不能为空';
       // 开始数据操作
-      let artitalkObject = AV.Object.extend('shuoshuo');
-      let atObject = new artitalkObject();
+      let sytalkObject = AV.Object.extend('shuoshuo');
+      let atObject = new sytalkObject();
       atObject.set('atContentMd', shuoshuoContent);
       shuoshuoContent = that.preview(0);
       atObject.set('atContentHtml', shuoshuoContent);
@@ -570,7 +572,7 @@ var sytalk = new function() {
             timeSvg = "<svg t=\"1591350675688\"  viewBox=\"0 0 1025 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"28653\" width=\"10\" height=\"10\"  style=\"display: inline\"><path d=\"M784.896 767.488c-291.84 0-528.384-236.544-528.384-528.384 0-81.92 19.456-159.744 52.736-228.864C132.608 95.744 10.24 275.968 10.24 485.376 10.24 777.216 246.784 1013.76 538.624 1013.76c209.408 0 390.144-122.368 475.136-299.008-69.12 33.28-146.944 52.736-228.864 52.736z m-246.272 176.128c-252.416 0-457.728-205.312-457.728-457.728 0-111.104 38.912-214.528 107.52-294.912-1.536 16.384-2.048 32.256-2.048 48.64 0 330.24 268.288 598.528 598.528 598.528 16.384 0 32.256-0.512 48.64-2.048-80.896 68.096-184.32 107.52-294.912 107.52z m127.488-633.344l65.536-32.256 65.536 32.256-9.216-75.264 49.152-55.296-70.656-14.336-34.816-66.56-34.816 66.56-70.656 14.336 49.152 55.296-9.216 75.264zM441.344 432.64l43.52-21.504 43.52 21.504-6.144-50.176 32.768-36.864-47.616-9.728-22.528-44.032-23.04 44.032-47.104 9.728 32.768 36.864-6.144 50.176z m313.344 79.872l-23.04-44.032-23.04 44.032-47.104 9.728 32.768 36.864-6.144 50.176 43.52-21.504 43.52 21.504-6.144-50.176 32.768-36.864-47.104-9.728z\" p-id=\"28654\"></path></svg>" + " ";
           }
           // 内容模板
-          let contentli = '<li id="li_' + atContent.id + '"><span class="shuoshuo_author_img"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="artitalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><a href="javascript:void(0)" ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right" onclick="sytalk.delete(\'' + atContent.id + '\')"><svg t="1591347978744" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14459" width="20" height="20" style="display: inline"><path d="M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z" p-id="14460"></path><path d="M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z" p-id="14461"></path></svg></a><div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span class="os">' + osSvg + os + '</span><span class="date">' + timeSvg + nowDate + '</span></p></span></li>';
+          let contentli = '<li id="li_' + atContent.id + '"><span class="shuoshuo_author_img"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="sytalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><a href="javascript:void(0)" ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right" onclick="sytalk.delete(\'' + atContent.id + '\')"><svg t="1591347978744" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14459" width="20" height="20" style="display: inline"><path d="M512 883.2A371.2 371.2 0 1 0 140.8 512 371.2 371.2 0 0 0 512 883.2z m0 64a435.2 435.2 0 1 1 435.2-435.2 435.2 435.2 0 0 1-435.2 435.2z" p-id="14460"></path><path d="M557.056 512l122.368 122.368a31.744 31.744 0 1 1-45.056 45.056L512 557.056l-122.368 122.368a31.744 31.744 0 1 1-45.056-45.056L466.944 512 344.576 389.632a31.744 31.744 0 1 1 45.056-45.056L512 466.944l122.368-122.368a31.744 31.744 0 1 1 45.056 45.056z" p-id="14461"></path></svg></a><div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span class="os">' + osSvg + os + '</span><span class="date">' + timeSvg + nowDate + '</span></p></span></li>';
           document.getElementById('maina').insertAdjacentHTML('beforeend', contentli);
         });
         // console.log(that.shuoNum, totalNum);
