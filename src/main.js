@@ -1,7 +1,7 @@
 'use strict'
 
 // 版本号
-const atVersion = "1.0.0";
+const atVersion = "1.0.2";
 
 // 表情包，兼容sytalk的
 const atEmoji = {
@@ -553,7 +553,6 @@ var sytalk = new function() {
           }
           // 格式化时间
           let timeSvg = "";
-          atHour = 8;
           if (atHour >= 0 && atHour < 5) {
             timeSvg = "<svg t=\"1591350196611\"  viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"24683\" width=\"10\" height=\"10\"  style=\"display: inline\"><path d=\"M171.605333 622.933333a341.333333 341.333333 0 1 1 680.789334 0h150.186666a21.333333 21.333333 0 1 1 0 42.666667H21.418667a21.333333 21.333333 0 1 1 0-42.666667h150.229333z m637.994667 0a298.666667 298.666667 0 1 0-595.2 0h595.2z\" p-id=\"24684\"></path></svg>" + " ";
           } else if (atHour >= 5 && atHour < 6) {
