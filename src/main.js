@@ -1,7 +1,7 @@
 'use strict'
 
 // 版本号
-const atVersion = "1.1.0";
+const atVersion = "1.1.1";
 
 // 表情包，兼容sytalk的
 const atEmoji = {
