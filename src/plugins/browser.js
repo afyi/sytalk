@@ -3,24 +3,14 @@
  * @author houchuanjie
  */
 ;(function(window, document) {
-	var Engine = function() {
-		var name = null;
-		var version = null;
-	};
-
-	var System = function() {
-		var name = null;
-		var version = null;
-	};
-
 	var Browser = function() {
 		var name = null; //浏览器名称
 		var version = null; //浏览器版本号
 	};
 	var Client = function() {
 		this.browser = new Browser(),
-		this.engine = new Engine(),
-		this.system = new System(),
+		this.engine = {name: null, version: null},
+		this.system = {name: null, version: null},
 		this.init();
 		console.log("Engine ：" + this.engine.name + " " + this.engine.version);
 		console.log("Browser：" + this.browser.name + " " + this.browser.version);
