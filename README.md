@@ -43,6 +43,7 @@ src
        ├─ av-min.js             # LeanCloud 提供的 SDK
        ├─ browser.js            # 返回用户操作系统
        └─ showdown.min.js       # Markdown 转换
+```
 
 ### 开源协议
 
