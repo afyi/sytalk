@@ -1,9 +1,13 @@
 ## 碎语TALK
 ---
 
-### 版本
+### 当前git版本
 
-1.0.0
+1.2.0
+
+### BUG反馈
+
+[https://blog.del.pub/mine/sytalk.html](https://blog.del.pub/mine/sytalk.html)
 
 ### 特别说明
 
