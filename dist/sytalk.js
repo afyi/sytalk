@@ -509,7 +509,7 @@ var sytalk = new function() {
         atObject.set('zanId', zanres.id);
         atObject.save().then(res => {
           // 这里看一下回来的信息
-          console.log(res);
+          // console.log(res);
           // 清空发布框的内容
           document.getElementById("neirong").value = "";
           document.getElementById("shuoshuo_preview").innerHTML = "";
@@ -625,7 +625,7 @@ var sytalk = new function() {
             timeSvg = "sy-day2";
           }
           // 是否点过赞了
-          console.log(typeof that.zanList[atContent.id], atContent.id, that.zanList[atContent.id]);
+          //console.log(typeof that.zanList[atContent.id], atContent.id, that.zanList[atContent.id]);
           let zaned = typeof that.zanList[atContent.id] !== 'undefined' ? ' zaned' : '';
           // 默认点赞数为0
           let zanNum = 0, zanId = typeof atContent.attributes.zanId == "undefined" ? 0 : that.trim(atContent.attributes.zanId);
@@ -824,7 +824,7 @@ var sytalk = new function() {
     }
     // 直接更新本地存储
     localStorage.setItem('sytalk-zan', JSON.stringify(zanList));
-    console.log(that.zanList);
+    // console.log(that.zanList);
     return true;
   }
   this.zan = function(obj) {
@@ -845,7 +845,7 @@ var sytalk = new function() {
     // 更新后的动作
     zanObj.save().then((res) => {
       // 监听一下
-      console.log(res);
+      // console.log(res);
       // 点赞数变化
       let num = parseInt(zanNum.innerText) + zanVal;
       // 渲染到dom
@@ -881,7 +881,7 @@ var sytalk = new function() {
     // 拿到列表
     query.find().then(zanObjLists => {
       zanObjLists.forEach(zanObj => {
-        console.log(zanObj.id, zanObj.attributes.num);
+        // console.log(zanObj.id, zanObj.attributes.num);
         let zan = document.getElementById('zan-' + zanObj.id);
         if (zan == null) return;
         zan.getElementsByClassName("num")[0].innerText = zanObj.attributes.num;
@@ -945,7 +945,7 @@ var sytalk = new function() {
   this.addClass = function (obj, cls) {
     //判断获取到的 class 是否为空, 如果不为空在前面加个'空格'.
     let blank = (obj.className != '') ? ' ' : '';
-    console.log(obj.className);
+    // console.log(obj.className);
     obj.className = obj.className + blank + cls; //替换原来的 class.
   }
 }
