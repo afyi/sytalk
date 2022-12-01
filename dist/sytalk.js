@@ -148,7 +148,7 @@ t.exports=function(t){return null!=t&&(n(t)||r(t)||!!t._isBuffer)}},function(t,e
 'use strict'
 
 // 版本号
-const atVersion = "1.1.1";
+const atVersion = "1.2.0";
 
 // 表情包，兼容sytalk的
 const atEmoji = {
@@ -175,6 +175,9 @@ var sytalk = new function() {
   that.emojiDict = {};
   // 要删除的列表
   that.deleteList = [];
+  // 点赞的数据
+  that.zanList = {}; // {"id": "time"}
+
   // 初始化
   this.init = function(option = {}) {
     // 写入配置文件
@@ -188,6 +191,8 @@ var sytalk = new function() {
       cssUrl: option.cssUrl || "https://fastly.jsdelivr.net/gh/afyi/sytalk/dist/css/sytalk.min.css",
       shuoPla: option.shuoPla || "请输入你的心情吧 ^_^~",
       avatarUrl: option.avatarUrl || "https://cravatar.cn/avatar/0?s=128",
+      osName: option.osName || {android: "Android", macos: "MacOS", win: "Windows", linux: "Linux", other: "other"},
+      isZan: option.isZan || 1,
       onLoad: option.onLoad || function(){},
       onLogin: option.onLogin || function(){},
       onPublished: option.onPublished || function() {}
@@ -230,7 +235,7 @@ var sytalk = new function() {
                + "  </div>"
                + "  <div id='shuoshuo_input' class='shuoshuo_active' style='display: none;'>"
                + "    <div id='shuoshuo_edit'>"
-               + "      <textarea class='shuoshuo_text' id='neirong' placeholder='" + that.config.shuoPla + "'></textarea>"
+               + "      <textarea class='shuoshuo_text' id='neirong' placeholder='" + that.config.shuoPla + "' style='background:url(\"" + that.config.bgImg + "\") no-repeat right center'></textarea>"
                + "      <span id='drag_area' class='z-index: -1;'></span>"
                + "    </div>"
                + "    <div id='shuoshuo_parttwo' class='shuoshuo_parttwo'>"
@@ -323,6 +328,10 @@ var sytalk = new function() {
     document.body.append(atOp);
     document.getElementById('operare_sytalk').innerHTML = atOpHtml;
     document.getElementById('sytalk_main').innerHTML = motionHtml + atHtml;
+    // 这里只有打开点赞，且支持localstorage的浏览器，才可以启用该功能
+    that.config.isZan = !!window.localStorage;
+    // 加载本地的点赞信息
+    that.getZanlist();
     // 这里第一次加载说说
     that.loadContent(0);
     // 阅读更多按钮响应事件
@@ -491,18 +500,32 @@ var sytalk = new function() {
       if (that.lock == 1) return;
       that.lock = 1;
       that.fadeIn('lazy');
-      atObject.save().then(res => {
-        // 清空发布框的内容
-        document.getElementById("neirong").value = "";
-        document.getElementById("shuoshuo_preview").innerHTML = "";
-        // 直接刷新
-        that.loadContent(that.shuoNum, 1, 0);
-        // 发布成功的钩子
-        that.config.onPublished(that.user, shuoshuoContent);
+      // 这里发布的时候在点赞表中加一行
+      let sytalkZanObject = AV.Object.extend('zan');
+      let zanObject = new sytalkZanObject();
+      zanObject.set('num', 0);
+      // 直接提交，不用then了
+      zanObject.save().then(zanres => {
+        atObject.set('zanId', zanres.id);
+        atObject.save().then(res => {
+          // 这里看一下回来的信息
+          console.log(res);
+          // 清空发布框的内容
+          document.getElementById("neirong").value = "";
+          document.getElementById("shuoshuo_preview").innerHTML = "";
+          // 直接刷新
+          that.loadContent(that.shuoNum, 1, 0);
+          // 发布成功的钩子
+          that.config.onPublished(that.user, shuoshuoContent);
+        }).finally(() => {
+          that.lock = 0;
+          that.fadeOut('lazy');
+        });
       }).finally(() => {
         that.lock = 0;
         that.fadeOut('lazy');
       });
+      
     }
     // 这里监听内容框的输入
     document.getElementById("neirong").addEventListener("input", () => {
@@ -526,6 +549,8 @@ var sytalk = new function() {
   // 加载说说
   // pageSize: 每页条数 refrush: 刷新当前全部 , startNum: 起始ID
   this.loadContent = function(pageSize = 0, refrush = 0, startNum = 0) {
+    // 存一下原参数，准备传给异步加载的点赞数
+    let pageSizeo = (pageSize < that.config.pageSize || pageSize == 0 ? that.config.pageSize : pageSize), startNumo = startNum;
     // 显示加载动画
     that.fadeIn('lazy');
     let query = new AV.Query('shuoshuo');
@@ -535,7 +560,7 @@ var sytalk = new function() {
       // 排序字段
       query.descending('createdAt');
       // 每页条数
-		  query.limit(pageSize < that.config.pageSize || pageSize == 0 ? that.config.pageSize : pageSize);
+		  query.limit(pageSizeo);
       // 筛选起点
 		  query.skip(startNum);
       // 如果是从0开始加载，那么这个条数直接归0
@@ -545,7 +570,8 @@ var sytalk = new function() {
         // 如果是强制刷新，则提前清空掉容器
         if (refrush == 1) document.getElementById('maina').innerHTML = '';
         // 处理列表
-        shuoContent.forEach(atContent => {
+        for (let i = 0; i < shuoContent.length; i++) {
+          let atContent = shuoContent[i];
           // 加载条数 + 1
           that.shuoNum = that.shuoNum + 1;
           // 头像初始化
@@ -581,6 +607,8 @@ var sytalk = new function() {
             default:
               osSvg = "sy-other";
           }
+          // 自定义操作系统名称
+          if (typeof that.config.osName[os.toLowerCase()] != "undefined") os = that.config.osName[os.toLowerCase()];
           // 格式化时间
           let timeSvg = "";
           if (atHour >= 0 && atHour < 6) {
@@ -596,10 +624,31 @@ var sytalk = new function() {
           } else {
             timeSvg = "sy-day2";
           }
+          // 是否点过赞了
+          console.log(typeof that.zanList[atContent.id], atContent.id, that.zanList[atContent.id]);
+          let zaned = typeof that.zanList[atContent.id] !== 'undefined' ? ' zaned' : '';
+          // 默认点赞数为0
+          let zanNum = 0, zanId = typeof atContent.attributes.zanId == "undefined" ? 0 : that.trim(atContent.attributes.zanId);
           // 内容模板
-          let contentli = '<li id="li_' + atContent.id + '"><span class="shuoshuo_author_img"><img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="sytalk_avatar gallery-group-img" width="48" height="48"></span><span class="cbp_tmlabel" id="atId' + atContent.id + '"><a href="javascript:void(0)" ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right" onclick="sytalk.delete(\'' + atContent.id + '\')" title="删除本条说说"><i class="syicon sy-close"></i></a><div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div><p class="shuoshuo_time"><span class="os"><i class="syicon ' + osSvg + '"></i>' + os + '</span><span class="date"><i class="syicon ' + timeSvg + '"></i>' + nowDate + '</span></p></span></li>';
-          document.getElementById('maina').insertAdjacentHTML('beforeend', contentli);
-        });
+          let contentli = [];
+          contentli[i] = '<li id="li_' + atContent.id + '">'
+                        + '  <span class="shuoshuo_author_img">'
+                        + '    <img id="atAvatar' + atContent.id + '" src="' + shuoAvatar + '" class="sytalk_avatar gallery-group-img" width="48" height="48">'
+                        + '  </span>'
+                        + '  <span class="cbp_tmlabel" id="atId' + atContent.id + '">'
+                        + '    <a href="javascript:void(0)" ' + hideIcon + ' id="operate' + atContent.id + '" class="delete_right" onclick="sytalk.delete(\'' + atContent.id + '\', \'' + zanId + '\')" title="删除本条说说">'
+                        + '      <i class="syicon sy-close"></i>'
+                        + '    </a>'
+                        + '    <div class="atContent" id="forEdit' + atContent.id + '">' + atContent.attributes.atContentHtml + '</div>'
+                        + '    <p class="shuoshuo_time">'
+                        + '      <span class="os"><i class="syicon ' + osSvg + '"></i>' + os + '</span>'
+                        + '      <span class="date"><i class="syicon ' + timeSvg + '"></i>' + nowDate + '</span>'
+                        + (that.config.isZan ? '      <span class="zan' + zaned + '" id="zan-' + zanId + '" data-id="' + atContent.id + '" data-zanId="' + zanId + '" onclick="javascript:sytalk.zan(this)"><i class="syicon sy-zan"></i><span class="num">' + zanNum + '</span></span>' : '')
+                        + '    </p>'
+                        + '  </span>'
+                        + '</li>';
+          document.getElementById('maina').insertAdjacentHTML('beforeend', contentli.join("\n"));
+        };
         // console.log(that.shuoNum, totalNum);
         if (that.shuoNum < totalNum) {
           that.fadeIn('readmore');
@@ -607,7 +656,9 @@ var sytalk = new function() {
           document.getElementById('readButton').innerHTML = '<center>' + atText.text14 + '</center>';
           document.getElementById('readButton').style.opacity = '0.5';
         }
-        that.fadeOut('lazy');
+        that.fadeOut('lazy'); 
+        // 这里异步来加载所有的点赞数
+        that.loadZanNum(pageSizeo, startNumo);
         // 这里设置回调，第1次加载到完后回调一下
         if (that.shuoNum <= that.config.pageSize) {
           that.config.onLoad();
@@ -634,15 +685,18 @@ var sytalk = new function() {
     }
   }
   // 删除当前说说
-  this.delete = (id) => {
+  this.delete = (id, zanId = 0) => {
     document.getElementById('delete1').innerHTML = '<input type="button" class="at_button" value="' + atText.text5 + '" id="Delete"/>';
     that.Show('shanchur');
     // 这里注册直接删除事件
     document.getElementById('Delete').onclick = function () {
       that.Hide('shanchur');
       that.fadeIn('lazy');
+      
       AV.Object.createWithoutData('shuoshuo', id).destroy().then( (success) => {
         that.deleteList.push('li_' + id);
+        // 这里再顺便删除掉对应的点赞数据
+        if (zanId != 0) AV.Object.createWithoutData('zan', zanId).destroy();
         that.Show('shanchu');
       }, function (error) {
         console.log(error.rawMessage);
@@ -741,6 +795,99 @@ var sytalk = new function() {
     let currentUser = AV.User.current();
     return currentUser ? currentUser.attributes : {username: "", img: "", email: ""};
   }
+  // 获取当前的点赞数组列表
+  this.getZanlist = function() {
+    // 如果没有开或者已经获取过了，但是没有，就直接返回一个空数组
+    if (!that.config.isZan || that.zanList.length == 0) return {};
+    // 获取当前本地浏览器中存储的数据
+    let zanList = localStorage.getItem('sytalk-zan');
+    zanList = JSON.parse(zanList) || [];
+    // 需要在这里把zanList转化成对象
+    zanList.forEach(zan => {
+      that.zanList[zan[0]] = zan[1];
+    });
+    // 更新当前数据
+    that.upvZanlist();
+  }
+  // 更新当前赞数
+  this.upvZanlist = function() {
+    let zanList = [];
+    // 获取当前时间戳
+    let currentTime = new Date().getTime();
+    for (let id in that.zanList) {
+      if (currentTime - 24 * 3600 * 1000 < that.zanList[id]) {
+        zanList.push([id, that.zanList[id]]);
+      } else {
+        // 把过期数据从容器对象里删除掉
+        delete(that.zanList[id]);
+      }
+    }
+    // 直接更新本地存储
+    localStorage.setItem('sytalk-zan', JSON.stringify(zanList));
+    console.log(that.zanList);
+    return true;
+  }
+  this.zan = function(obj) {
+    // 如果系统禁止，则什么也不做
+    if (!that.config.isZan) return false;
+    // 点赞数
+    let zanNum = obj.getElementsByClassName("num")[0];
+    // 当前说说id
+    let shuoshuoId = obj.getAttribute('data-id');
+    // 当前zanid
+    let zanId = obj.getAttribute('data-zanid');
+    // 表对象
+    let zanObj = AV.Object.createWithoutData('zan', zanId);
+    // 这里是用于加减的值
+    let zanVal = that.hasClass(obj, "zaned") ? -1 : 1;
+    // 官方文档原子性变化
+    zanObj.increment('num', zanVal);
+    // 更新后的动作
+    zanObj.save().then((res) => {
+      // 监听一下
+      console.log(res);
+      // 点赞数变化
+      let num = parseInt(zanNum.innerText) + zanVal;
+      // 渲染到dom
+      zanNum.innerText = num < 0 ? 0 : num;
+      if (that.hasClass(obj, "zaned")) {
+        // 从数组里把点赞记录中去掉
+        typeof that.zanList[shuoshuoId] != "undefined" && delete(that.zanList[shuoshuoId]);
+        // 去掉样式
+        that.removeClass(obj, "zaned");
+      } else {
+        // 把当前点赞记录加入数据
+        that.zanList[shuoshuoId] = new Date().getTime();
+        // 给当前对象增加已点赞样式
+        that.addClass(obj, "zaned");
+      }
+      // 直接更新数据
+      that.upvZanlist();
+    }, (error) => {
+      console.log("点赞发生错误:", error); 
+    });     
+  };
+  // 异步加载点赞的数量
+  this.loadZanNum = function(pageSize = 10, startNum = 0) {
+    // 因为点赞功能和说说是一一对应，为了防止说说被搞才单独提出一个库来，现在的情况是翻页即可实现，那拿一次即可
+    // 一切反而简单了起来
+    let query = new AV.Query('zan');
+    // 排序字段
+    query.descending('createdAt');
+    // 每页条数
+    query.limit(pageSize);
+    // 筛选起点
+    query.skip(startNum);
+    // 拿到列表
+    query.find().then(zanObjLists => {
+      zanObjLists.forEach(zanObj => {
+        console.log(zanObj.id, zanObj.attributes.num);
+        let zan = document.getElementById('zan-' + zanObj.id);
+        if (zan == null) return;
+        zan.getElementsByClassName("num")[0].innerText = zanObj.attributes.num;
+      });
+    })
+  }
   // 时间美化
   this.timeFormat = function(time) {
     return time < 10 ? '0' + time : time;
@@ -770,5 +917,35 @@ var sytalk = new function() {
   // 去空格
   this.trim = function(str) {
     return str.replace(/^(\s*)|(\s*)$/g, '');
+  }
+  // 自定义hasClass
+  this.hasClass = function(obj, cls) {
+    let obj_class = obj.className;  // 获取 class 内容.
+    let obj_class_lst = obj_class.split(/\s+/); // 通过split空字符将cls转换成数组.
+    let x = 0;
+    for (x in obj_class_lst) {
+      if (obj_class_lst[x] === cls) return true;
+    }
+    return false;
+  }
+  // 自定义removeClass
+  this.removeClass = function (obj, cls) {
+    // 获取 class 内容, 并在首尾各加一个空格. ex) 'abc    bcd' -> ' abc    bcd '
+    let obj_class = ' ' + obj.className + ' ';
+    // 将多余的空字符替换成一个空格. ex) ' abc    bcd ' -> ' abc bcd '
+    obj_class = obj_class.replace(/(\s+)/gi, ' ');  
+    // 在原来的 class 替换掉首尾加了空格的 class. ex) ' abc bcd ' -> 'bcd '
+    let removed = obj_class.replace(' ' + cls + ' ', ' ');
+    //去掉首尾空格. ex) 'bcd ' -> 'bcd'
+    removed = removed.replace(/(^\s+)|(\s+$)/g, ''); 
+    // 替换原来的 class.
+    obj.className = removed; 
+  }
+  // 自定义addClass
+  this.addClass = function (obj, cls) {
+    //判断获取到的 class 是否为空, 如果不为空在前面加个'空格'.
+    let blank = (obj.className != '') ? ' ' : '';
+    console.log(obj.className);
+    obj.className = obj.className + blank + cls; //替换原来的 class.
   }
 }

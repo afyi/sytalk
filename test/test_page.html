@@ -8,18 +8,19 @@
 </head>
 <body>
   <div id="sytalk_main" style="width:90%;margin:0 auto"></div>
- <!-- <script src="../src/plugins/av-min.js"></script>
+  <script src="../src/plugins/av-min.js"></script>
   <script src="../src/plugins/browser.js"></script>
   <script src="../src/plugins/showdown.min.js"></script>
-  <script src="../src/main.js"></script>-->
-  <script src="../dist/sytalk.js"></script>
+  <script src="../src/main.js"></script>
+  <!--<script src="../dist/sytalk.js"></script>-->
   <script>
     sytalk.init({
       appId: "BGeSJMBDjuEFXBmPilk8TapD-gzGzoHsz",
       appKey: "TpsNCwwh6VGn3od8ZoYH1stm",
       serverURL: "https://yfbtuvs4.lc-cn-n1-shared.com",
       pageSize: 5,
-      // cssUrl: "https://fastly.jsdelivr.net/gh/afyi/sytalk/dist/css/sytalk..css",
+      cssUrl: "../src/css/sytalk.css",
+      osName: {android: "风决定不了方向的Max3", macos: "MacOS", windows: "Windows", linux: "Linux", other: "来自火星的电脑"},
       onLoad: function() {
         console.log("这里是加载完成！");
       } 

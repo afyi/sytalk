@@ -1,8 +1,8 @@
 /** 全局变量 */
 :root{--list-even-color:#fff;--list-odd-color:#fff;--readmore-bg-color:#fff;--main-text-color: #707070; --button-bg-color: #efefef}
 /** 阿里云font */
-@font-face {font-family: "syicon"; src: url('//at.alicdn.com/t/c/font_3781441_kncdrgpmq9s.woff2?t=1668933662629') format('woff2'),url('//at.alicdn.com/t/c/font_3781441_kncdrgpmq9s.woff?t=1668933662629') format('woff'),url('//at.alicdn.com/t/c/font_3781441_kncdrgpmq9s.ttf?t=1668933662629') format('truetype');}
-.syicon{font-family: "syicon" !important;font-size: 16px;font-style: normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}.sy-linux:before{content:"\e61c"}.sy-apple:before{content:"\e61d"}.sy-android:before{content:"\e61e"}.sy-win:before{content:"\e621"}.sy-day4:before{content:"\e623"}.sy-close1:before{content:"\e624"}.sy-day5:before{content:"\e627"}.sy-other:before{content:"\e628"}.sy-day2:before{content:"\e629"}.sy-edit1:before{content:"\e62a"}.sy-day3:before{content:"\e62b"}.sy-day1:before{content:"\e62c"}.sy-login1:before{content:"\e62d"}.sy-sun:before{content:"\e620"}.sy-close:before{content:"\e626"}.sy-cloud:before{content:"\e625"}.sy-edit:before{content:"\e619"}.sy-login:before{content:"\e622"}
+@font-face {font-family: "syicon"; src: url('//at.alicdn.com/t/c/font_3781441_xhtql9cb4.woff2?t=1669300262840') format('woff2'), url('//at.alicdn.com/t/c/font_3781441_xhtql9cb4.woff?t=1669300262840') format('woff'), url('//at.alicdn.com/t/c/font_3781441_xhtql9cb4.ttf?t=1669300262840') format('truetype');}
+.syicon{font-family: "syicon" !important;font-size: 16px;font-style: normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}.sy-zan:before{content: "\e62e";}.sy-linux:before{content:"\e61c"}.sy-apple:before{content:"\e61d"}.sy-android:before{content:"\e61e"}.sy-win:before{content:"\e621"}.sy-day4:before{content:"\e623"}.sy-close1:before{content:"\e624"}.sy-day5:before{content:"\e627"}.sy-other:before{content:"\e628"}.sy-day2:before{content:"\e629"}.sy-edit1:before{content:"\e62a"}.sy-day3:before{content:"\e62b"}.sy-day1:before{content:"\e62c"}.sy-login1:before{content:"\e62d"}.sy-sun:before{content:"\e620"}.sy-close:before{content:"\e626"}.sy-cloud:before{content:"\e625"}.sy-edit:before{content:"\e619"}.sy-login:before{content:"\e622"}
 #sytalk_main{transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);font-family:UbuntuMono;color:var(--main-text-color) }
 #sytalk_main svg{display:inline;color:var(--main-text-color)}
 #sytalk_main img{transition: all 0.28s ease;}
@@ -69,7 +69,7 @@
 #operare_sytalk .c2 .closeBtn{position:absolute;right:15px;top:15px}
 #operare_sytalk .c2 .at_button{width: 80%;border:0;margin-top:5px;background-color:var(--button-bg-color)}
 /** 输入框 */
-#sytalk_main #shuoshuo_input .shuoshuo_text{width: 100%;height: 130px;padding: 8px 16px;transition: all 0.35s ease-in-out 0s;outline-style: none;border: 1px solid #ccc;border-radius: 6px;resize: none;background-color: transparent;color: #999;box-sizing:border-box;background:url('" + that.config.bgImg + "') no-repeat right center}
+#sytalk_main #shuoshuo_input .shuoshuo_text{width: 100%;height: 130px;padding: 8px 16px;transition: all 0.35s ease-in-out 0s;outline-style: none;border: 1px solid #ccc;border-radius: 6px;resize: none;background-color: transparent;color: #999;box-sizing:border-box;}
 #sytalk_main #shuoshuo_input .shuoshuo_text:focus{background-position-y: 150px;}
 #sytalk_main #shuoshuo_input .shuoshuo_row{display:flex;}
 #sytalk_main #shuoshuo_input .sytalk_child {margin-left:auto;margin-top:10px}
@@ -86,9 +86,9 @@
 #sytalk_main #shuoshuo_input #preview img {margin-top: 0}
 /** 时间机型样式 */
 #sytalk_main p.shuoshuo_time{font-size:.95rem;margin:10px 0 0;padding-top:5px;border-top: 1px dashed;line-height:2.2rem}
-#sytalk_main p.shuoshuo_time svg{width: 12px;height:12px;padding-right:3px}
-#sytalk_main p.shuoshuo_time .os, #sytalk_main p.shuoshuo_time .date{position:relative;padding:0 15px 0 20px}
-#sytalk_main p.shuoshuo_time .os i, #sytalk_main p.shuoshuo_time .date i{position:absolute;left:0;top:0;line-height:21px;font-size:14px}
+#sytalk_main p.shuoshuo_time .os, #sytalk_main p.shuoshuo_time .date, #sytalk_main p.shuoshuo_time .zan{position:relative;padding:0 15px 0 20px}
+#sytalk_main p.shuoshuo_time .os i, #sytalk_main p.shuoshuo_time .date i, #sytalk_main p.shuoshuo_time .zan i{position:absolute;left:0;top:0;line-height:21px;font-size:14px}
+#sytalk_main p.shuoshuo_time .zan.zaned i{color:#f76119}
 /** readmore */
 #sytalk_main #readButton #readmore{background-color: var(--readmore-bg-color);border:none;color:var(--main-text-color);font-size:medium;font-weight:500;border-radius:8px;outline:0;box-shadow:0 0 8px rgb(0 0 0 / 30%);padding:8px 16px}
 #sytalk_main #readButton #readmore:hover{box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);}
