@@ -1,7 +1,7 @@
 'use strict'
 
 // 版本号
-const atVersion = "1.2.0";
+const atVersion = "1.2.2";
 
 // 表情包，兼容sytalk的
 const atEmoji = {
@@ -11,10 +11,11 @@ const atEmoji = {
 }
 
 // 相关的字符
-const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "请输入您的用户名", text8: "请输入您的密码", text9: "登   录", text10: "取消", text11: "发布说说", text12: "添加图片，视频，音乐", text14: "已经到底了哦", text15: "请先登录", text16: "内容不能为空", text17: "登陆失败，请检查用户名及密码是否正确", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text21: "请拖拽图片到此处", text22: "表情", text23: "删除", text24: "如果你看到这条说说，恭喜你已经配置成功并且可以正常使用了。当你发布一个说说之后，我将会自动消失。快去探索sytalk吧<br>欢迎加入sytalk的QQ交流群：1104585229<br>觉得本项目不错的话可以推荐给你的好友或者去GitHub点一个star，感谢支持", text25: "上传中", text26: "图片", text27: "音乐", text28: "视频", text29: "添加", text30: "上传的图片最大支持5M，请压缩后或换一个继续上传", text31: "上传的音乐最大支持10M，请压缩后或换一个继续上传", text32: "上传的视频最大支持30M，请压缩后或换一个继续上传", text33: "图片格式错误，请不要上传其他类型的文件", text34: "音频格式错误，请不要上传其他类型的文件", text35: "视频格式错误，请不要上传其他类型的文件", textup: "上传ing", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text40: "评论", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
+const atText = {text0: "由", text00: "发表", text1: "加载更多...", text2: "预览", text3: "发布", text4: "已登录", text5: "确定", text6: "退出登录", text7: "请输入您的用户名", text8: "请输入您的密码", text9: "登   录", text10: "取消", text11: "发布说说", text14: "已经到底了哦", text15: "请先登录", text18: "头像url", text19: "确定删除本条说说吗？", text20: "删除成功", text22: "表情", text23: "删除", text29: "添加", loadingTxT: "加载中", text36: "用户名不能为空", text37: "密码不能为空", text38: "请在下方输入框进行修改然后点击保存即可", text39: "保存", text41: "邮箱", text42: "昵称", text43: "用户名与密码不匹配", text44: "登陆失败，常见错误有<br><li>网络错误</li><li>域名不在leancloud的域名白名单中被限制登录</li><li>当前页面使用了其他leancloud应用导致登录到了其他应用所以失败</li>", text45: "未找到此用户", text46: "尝试错误密码次数过多，请稍后再试"};
 
 // sytalk的方法
 var sytalk = new function() {
+  // 防止this被污染
   let that = this;
   // 默认页
   that.pageNum = 1;
@@ -28,26 +29,42 @@ var sytalk = new function() {
   that.emojiDict = {};
   // 要删除的列表
   that.deleteList = [];
-  // 点赞的数据
-  that.zanList = {}; // {"id": "time"}
+  // 点赞的数据 格式：{"id": "time"}
+  that.zanList = {};
 
   // 初始化
   this.init = function(option = {}) {
     // 写入配置文件
     that.config = {
+      // leancloud appid
       appId: option.appId || "",
+      // leancloud appkey
       appKey: option.appKey || "",
+      // leancloud serverUrl
       serverURL: option.serverURL || "",
+      // 每页加载数量
       pageSize: option.pageSize || 10,
+      // 表情的CDN路径，默认是jsdelivr.net的加速地址
       emojiServer: option.emojiServer || "https://fastly.jsdelivr.net/gh/afyi/sytalk/dist/emoji/",
+      // 发说说框的背景图，默认是https://github.com/afyi/sytalk/dist/img/bgImg.webp
       bgImg: option.bgImg || "https://fastly.jsdelivr.net/gh/afyi/sytalk/dist/img/bgImg.webp",
+      // css的地址，默认也是jsdelivr加速过的github地址，可以更换为你自己的
       cssUrl: option.cssUrl || "https://fastly.jsdelivr.net/gh/afyi/sytalk/dist/css/sytalk.min.css",
+      // 说说框的默认占位文字
       shuoPla: option.shuoPla || "请输入你的心情吧 ^_^~",
+      // 发说说的个人头像，默认用的是cravatar.cn默认头像
       avatarUrl: option.avatarUrl || "https://cravatar.cn/avatar/0?s=128",
+      // 自定义不同设备的显示名称，可以定义一个或者多个
       osName: option.osName || {android: "Android", macos: "MacOS", win: "Windows", linux: "Linux", other: "other"},
+      // 是否开启点赞功能
       isZan: option.isZan || 1,
+      // 点赞间隔，单位：秒，点赞时间间隔，默认是1天，如果设置为0，则只要有记录就不会清除
+      zanIntval: typeof option.zanIntval == "undefined" ? 24 * 3600 : option.zanIntval,  
+      // 说说加载完成后回调
       onLoad: option.onLoad || function(){},
+      // 登陆后回调事件
       onLogin: option.onLogin || function(){},
+      // 发布说说后的回调事件
       onPublished: option.onPublished || function() {}
     };
     // 初始化leancloud方法
@@ -183,6 +200,8 @@ var sytalk = new function() {
     document.getElementById('sytalk_main').innerHTML = motionHtml + atHtml;
     // 这里只有打开点赞，且支持localstorage的浏览器，才可以启用该功能
     that.config.isZan = !!window.localStorage;
+    // 这里换算一下评论的间隔
+    that.config.zanIntval = that.config.zanIntval * 1000; // 转换成毫秒
     // 加载本地的点赞信息
     that.getZanlist();
     // 这里第一次加载说说
@@ -668,7 +687,7 @@ var sytalk = new function() {
     // 获取当前时间戳
     let currentTime = new Date().getTime();
     for (let id in that.zanList) {
-      if (currentTime - 24 * 3600 * 1000 < that.zanList[id]) {
+      if (that.config.zanIntval == 0 || (currentTime - that.config.zanIntval < that.zanList[id])) {
         zanList.push([id, that.zanList[id]]);
       } else {
         // 把过期数据从容器对象里删除掉
@@ -680,6 +699,7 @@ var sytalk = new function() {
     // console.log(that.zanList);
     return true;
   }
+  // 点赞方法处理
   this.zan = function(obj) {
     // 如果系统禁止，则什么也不做
     if (!that.config.isZan) return false;
